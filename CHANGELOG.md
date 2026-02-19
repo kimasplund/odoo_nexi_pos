@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Advanced analytics dashboard
 - Mobile app companion for terminal status
 
-## [18.0.1.0.0] - 2024-01-15
+## [18.0.1.0.0] - 2026-02-18
 
 ### Added
 - Initial release for Odoo 18.0

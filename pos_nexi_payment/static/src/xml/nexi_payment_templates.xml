@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- 
+        NEXI Payment Button
+        Payment method button with NEXI branding
+    -->
+    <t t-name="pos_nexi_payment.NexiPaymentButton">
+        <div class="payment-method nexi-payment-method" 
+             t-att-class="{ 'disabled': !terminalStatus.available }"
+             t-on-click="onClick">
+            <div class="payment-method-icon">
+                <i class="fa fa-credit-card nexi-icon"/>
+            </div>
+            <div class="payment-method-name">
+                <t t-esc="props.name"/>
+            </div>
+            <div t-if="isNexiMethod" class="nexi-terminal-indicator">
+                <span t-att-class="terminalStatus.class" 
+                      t-att-title="terminalStatus.message">
+                    <i class="fa fa-circle"/>
+                </span>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        NEXI Payment Dialog
+        Modal dialog for payment initiation
+    -->
+    <t t-name="pos_nexi_payment.NexiPaymentDialog">
+        <div class="modal-dialog nexi-payment-dialog">
+            <div class="modal-content">
+                <div class="modal-header nexi-dialog-header">
+                    <h4 class="modal-title">
+                        <i class="fa fa-credit-card"/>
+                        NEXI Payment
+                    </h4>
+                </div>
+                <div class="modal-body nexi-dialog-body">
+                    <!-- Amount Display -->
+                    <div class="nexi-amount-display">
+                        <span class="nexi-amount-label">Amount to pay:</span>
+                        <span class="nexi-amount-value" t-esc="formattedAmount"/>
+                    </div>
+
+                    <!-- Terminal Selection -->
+                    <div class="nexi-terminal-section">
+                        <label class="nexi-section-label">
+                            <i class="fa fa-desktop"/>
+                            Select Terminal
+                        </label>
+                        <div class="nexi-terminal-list">
+                            <t t-if="availableTerminals.length === 0">
+                                <div class="nexi-no-terminals alert alert-warning">
+                                    <i class="fa fa-exclamation-triangle"/>
+                                    No terminal available. Please verify that terminals are powered on and connected.
+                                </div>
+                            </t>
+                            <t t-foreach="availableTerminals" t-as="terminal" t-key="terminal.id">
+                                <div class="nexi-terminal-option"
+                                     t-att-class="{ 
+                                         'selected': state.selectedTerminalId === terminal.id,
+                                         'disabled': !terminal.isAvailable()
+                                     }"
+                                     t-on-click="() => onTerminalSelect(terminal.id)">
+                                    <div class="nexi-terminal-radio">
+                                        <input type="radio" 
+                                               t-att-checked="state.selectedTerminalId === terminal.id"
+                                               t-att-disabled="!terminal.isAvailable()"/>
+                                    </div>
+                                    <div class="nexi-terminal-info">
+                                        <span class="nexi-terminal-name" t-esc="terminal.name"/>
+                                        <span t-if="terminal.is_default" class="nexi-default-badge">
+                                            Default
+                                        </span>
+                                    </div>
+                                    <div class="nexi-terminal-status">
+                                        <span t-att-class="terminal.getStatusClass()">
+                                            <i class="fa fa-circle"/>
+                                            <t t-esc="terminal.getStatusLabel()"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div class="nexi-instructions">
+                        <i class="fa fa-info-circle"/>
+                        <span>After starting the payment, the customer must complete the operation on the physical POS terminal.</span>
+                    </div>
+                </div>
+                <div class="modal-footer nexi-dialog-footer">
+                    <button type="button" 
+                            class="btn btn-lg btn-secondary nexi-btn-cancel"
+                            t-on-click="onCancel">
+                        <i class="fa fa-times"/>
+                        Cancel
+                    </button>
+                    <button type="button"
+                            class="btn btn-lg btn-primary nexi-btn-start"
+                            t-att-disabled="!state.selectedTerminalId"
+                            t-on-click="onStartPayment">
+                        <i class="fa fa-play"/>
+                        Start Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        NEXI Waiting Screen
+        Full-screen overlay during payment processing
+    -->
+    <t t-name="pos_nexi_payment.NexiWaitingScreen">
+        <div class="nexi-waiting-screen">
+            <div class="nexi-waiting-content">
+                <!-- Loading Animation -->
+                <div class="nexi-loading-animation">
+                    <div class="nexi-spinner">
+                        <div class="nexi-spinner-ring"></div>
+                        <div class="nexi-spinner-ring"></div>
+                        <div class="nexi-spinner-ring"></div>
+                    </div>
+                    <div class="nexi-pulse">
+                        <i class="fa fa-credit-card"/>
+                    </div>
+                </div>
+
+                <!-- Main Message -->
+                <h2 class="nexi-waiting-title">
+                    <i class="fa fa-hand-o-up"/>
+                    Complete payment on terminal
+                </h2>
+
+                <!-- Status Message -->
+                <p class="nexi-waiting-status" t-esc="displayStatus"/>
+
+                <!-- Amount Display -->
+                <div class="nexi-waiting-amount">
+                    <span class="nexi-amount-label">Amount:</span>
+                    <span class="nexi-amount-value" t-esc="env.utils.formatCurrency(props.transaction?.amount)"/>
+                </div>
+
+                <!-- Timer -->
+                <div class="nexi-waiting-timer">
+                    <i class="fa fa-clock-o"/>
+                    <span class="nexi-timer-value" t-esc="formattedTime"/>
+                    <span class="nexi-timer-label">elapsed</span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="nexi-progress-bar">
+                    <div class="nexi-progress-fill"></div>
+                </div>
+
+                <!-- Cancel Button -->
+                <button type="button" 
+                        class="btn btn-lg btn-outline-danger nexi-btn-cancel-payment"
+                        t-on-click="onCancel">
+                    <i class="fa fa-times-circle"/>
+                    Cancel Payment
+                </button>
+
+                <!-- Instructions -->
+                <div class="nexi-waiting-instructions">
+                    <p><i class="fa fa-info-circle"/>
+                    The customer must insert the card and follow the instructions on the POS terminal.</p>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        NEXI Payment Result
+        Success/Error display after payment completion
+    -->
+    <t t-name="pos_nexi_payment.NexiPaymentResult">
+        <div class="modal-dialog nexi-result-dialog">
+            <div class="modal-content" t-att-class="{ 'nexi-success': isSuccess, 'nexi-error': !isSuccess }">
+                <!-- Success State -->
+                <t t-if="isSuccess">
+                    <div class="modal-header nexi-result-header nexi-success-header">
+                        <h4 class="modal-title">
+                            <i class="fa fa-check-circle"/>
+                            Payment Completed!
+                        </h4>
+                    </div>
+                    <div class="modal-body nexi-result-body">
+                        <div class="nexi-result-icon nexi-success-icon">
+                            <i class="fa fa-check"/>
+                        </div>
+                        <div class="nexi-result-message">
+                            The payment has been processed successfully.
+                        </div>
+                        <div class="nexi-transaction-details">
+                            <div class="nexi-detail-row">
+                                <span class="nexi-detail-label">Amount:</span>
+                                <span class="nexi-detail-value nexi-amount" t-esc="formattedAmount"/>
+                            </div>
+                            <div class="nexi-detail-row" t-if="transactionData?.card_scheme">
+                                <span class="nexi-detail-label">Card scheme:</span>
+                                <span class="nexi-detail-value" t-esc="transactionData.card_scheme"/>
+                            </div>
+                            <div class="nexi-detail-row" t-if="transactionData?.card_number_customer">
+                                <span class="nexi-detail-label">Card:</span>
+                                <span class="nexi-detail-value" t-esc="transactionData.card_number_customer"/>
+                            </div>
+                            <div class="nexi-detail-row">
+                                <span class="nexi-detail-label">Reference:</span>
+                                <span class="nexi-detail-value" t-esc="transactionData?.reference || transactionData?.transaction_ref || 'N/A'"/>
+                            </div>
+                            <div class="nexi-detail-row">
+                                <span class="nexi-detail-label">Authorization Code:</span>
+                                <span class="nexi-detail-value" t-esc="transactionData?.authorization_code || transactionData?.auth_code || 'N/A'"/>
+                            </div>
+                            <div class="nexi-detail-row" t-if="transactionData?.card_entry_mode">
+                                <span class="nexi-detail-label">Entry mode:</span>
+                                <span class="nexi-detail-value" t-esc="transactionData.getEntryModeLabel ? transactionData.getEntryModeLabel() : transactionData.card_entry_mode"/>
+                            </div>
+                            <div class="nexi-detail-row">
+                                <span class="nexi-detail-label">Date:</span>
+                                <span class="nexi-detail-value" t-esc="new Date().toLocaleString()"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer nexi-result-footer">
+                        <button type="button" 
+                                class="btn btn-lg btn-primary nexi-btn-close"
+                                t-on-click="onClose">
+                            <i class="fa fa-check"/>
+                            Continue
+                        </button>
+                        <button type="button" 
+                                class="btn btn-lg btn-secondary nexi-btn-print"
+                                t-on-click="onPrintReceipt">
+                            <i class="fa fa-print"/>
+                            Print Receipt
+                        </button>
+                    </div>
+                </t>
+
+                <!-- Error State -->
+                <t t-else="">
+                    <div class="modal-header nexi-result-header nexi-error-header">
+                        <h4 class="modal-title">
+                            <i class="fa fa-times-circle"/>
+                            Payment Failed
+                        </h4>
+                    </div>
+                    <div class="modal-body nexi-result-body">
+                        <div class="nexi-result-icon nexi-error-icon">
+                            <i class="fa fa-times"/>
+                        </div>
+                        <div class="nexi-result-message nexi-error-message">
+                            <t t-esc="errorMessage"/>
+                        </div>
+                        <div class="nexi-error-details" t-if="transactionData?.error_message">
+                            <div class="alert alert-secondary">
+                                <small><strong>Technical detail:</strong> <t t-esc="transactionData.error_message"/></small>
+                            </div>
+                        </div>
+                        <div class="nexi-troubleshooting">
+                            <h5><i class="fa fa-wrench"/> Troubleshooting:</h5>
+                            <ul>
+                                <li>Verify that the terminal is powered on and connected</li>
+                                <li>Verify that the card is valid</li>
+                                <li>Retry the payment</li>
+                                <li>Use another payment method if the problem persists</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-footer nexi-result-footer">
+                        <button type="button" 
+                                class="btn btn-lg btn-secondary nexi-btn-close"
+                                t-on-click="onClose">
+                            <i class="fa fa-arrow-left"/>
+                            Back to Payment
+                        </button>
+                        <button type="button" 
+                                class="btn btn-lg btn-primary nexi-btn-retry"
+                                t-on-click="onRetry">
+                            <i class="fa fa-refresh"/>
+                            Retry
+                        </button>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        Terminal Status Indicator
+        Small status icon for POS header
+    -->
+    <t t-name="pos_nexi_payment.NexiTerminalStatus">
+        <div t-if="canShowStatus" 
+             class="nexi-status-indicator"
+             t-att-class="overallStatus.class"
+             t-att-title="overallStatus.tooltip"
+             t-on-click="toggleExpanded">
+            <i t-att-class="'fa ' + overallStatus.icon"/>
+            <span class="nexi-status-label" t-esc="overallStatus.label"/>
+            <i t-if="state.expanded" class="fa fa-caret-up"/>
+            <i t-else="" class="fa fa-caret-down"/>
+
+            <!-- Expanded Terminal List -->
+            <div t-if="state.expanded" class="nexi-status-dropdown" t-on-click.stop="">
+                <div class="nexi-status-header">
+                    <span>Terminal Status</span>
+                    <button class="nexi-refresh-btn" t-on-click="onManualRefresh" title="Refresh">
+                        <i class="fa fa-refresh"/>
+                    </button>
+                </div>
+                <div class="nexi-status-list">
+                    <t t-foreach="terminalList" t-as="terminal" t-key="terminal.id">
+                        <div class="nexi-status-item">
+                            <span class="nexi-status-dot" t-att-class="terminal.statusClass">
+                                <i class="fa fa-circle"/>
+                            </span>
+                            <span class="nexi-terminal-name" t-esc="terminal.name"/>
+                            <span class="nexi-terminal-state" t-esc="terminal.statusLabel"/>
+                        </div>
+                    </t>
+                </div>
+                <div class="nexi-status-footer">
+                    <span><t t-esc="onlineCount"/>/<t t-esc="totalCount"/> online</span>
+                    <span class="nexi-last-refresh" t-esc="lastRefreshDisplay"/>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        NEXI Payment Method Item
+        Extended payment method display
+    -->
+    <t t-name="pos_nexi_payment.NexiPaymentMethodItem">
+        <div class="payment-method nexi-payment-method-item"
+             t-att-class="terminalStatus.class"
+             t-att-title="terminalStatus.message">
+            <div class="payment-method-content">
+                <i class="payment-method-icon fa fa-credit-card"/>
+                <span class="payment-method-name" t-esc="props.paymentMethod.name"/>
+            </div>
+            <div t-if="isNexiMethod" class="nexi-method-status">
+                <i class="fa" t-att-class="terminalStatus.available ? 'fa-check text-success' : 'fa-times text-danger'"/>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        Last Transaction Summary
+        Shows summary of recent transaction
+    -->
+    <t t-name="pos_nexi_payment.NexiLastTransaction">
+        <div t-if="hasLastTransaction" 
+             class="nexi-last-transaction"
+             t-att-class="{ 'nexi-transaction-success': isSuccess, 'nexi-transaction-error': !isSuccess }">
+            <div class="nexi-transaction-header">
+                <i t-att-class="isSuccess ? 'fa fa-check-circle text-success' : 'fa fa-times-circle text-danger'"/>
+                <span>Last NEXI Transaction</span>
+            </div>
+            <div class="nexi-transaction-body">
+                <div class="nexi-transaction-amount" t-esc="formattedAmount"/>
+                <div class="nexi-transaction-ref" t-esc="transaction?.transaction_ref"/>
+                <div class="nexi-transaction-time" t-esc="transactionTime"/>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        Terminal Status Popup
+        Detailed terminal status modal
+    -->
+    <t t-name="pos_nexi_payment.NexiTerminalStatusPopup">
+        <div class="modal-dialog nexi-terminal-popup">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <i class="fa fa-desktop"/>
+                        NEXI Terminal Status
+                    </h4>
+                    <button type="button" class="close" t-on-click="onClose">
+                        <i class="fa fa-times"/>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="nexi-summary-bar">
+                        <span class="nexi-summary-item nexi-online">
+                            <i class="fa fa-check-circle"/>
+                            <t t-esc="onlineCount"/> Online
+                        </span>
+                        <span class="nexi-summary-item nexi-total">
+                            <i class="fa fa-desktop"/>
+                            <t t-esc="totalCount"/> Total
+                        </span>
+                    </div>
+                    <div class="nexi-terminal-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Terminal</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="terminalsList" t-as="terminal" t-key="terminal.id">
+                                    <td>
+                                        <span t-esc="terminal.name"/>
+                                        <span t-if="terminal.is_default" class="badge badge-info">Default</span>
+                                    </td>
+                                    <td>
+                                        <span t-att-class="'badge ' + terminal.getStatusClass()"
+                                              t-esc="terminal.getStatusLabel()"/>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-primary"
+                                                t-on-click="() => onTestConnection(terminal.id)">
+                                            <i class="fa fa-plug"/>
+                                            Test
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" t-on-click="onClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <!-- 
+        NEXI Payment Line Extension
+        Additional info on payment lines
+    -->
+    <t t-name="pos_nexi_payment.NexiPaymentLine">
+        <div class="paymentline nexi-payment-line"
+             t-att-class="{ 'nexi-line-completed': props.line.transaction_id }">
+            <div class="paymentline-info">
+                <span class="paymentline-name" t-esc="props.line.payment_method.name"/>
+                <span t-if="props.line.card_type" class="badge badge-info ms-1" style="font-size: 0.75em;">
+                    <t t-esc="props.line.card_type"/>
+                </span>
+                <span t-if="props.line.transaction_ref || props.line.nexi_reference" class="nexi-transaction-ref">
+                    <i class="fa fa-hashtag"/>
+                    <t t-esc="props.line.nexi_reference || props.line.transaction_ref"/>
+                </span>
+            </div>
+            <div class="paymentline-amount" t-esc="env.utils.formatCurrency(props.line.get_amount())"/>
+            <div t-if="props.line.transaction_id" class="nexi-payment-status">
+                <i class="fa fa-check-circle text-success" title="Payment completed"/>
+            </div>
+        </div>
+    </t>
+
+    <!--
+        NEXI Receipt Info
+        Card details section for printed receipt
+    -->
+    <t t-name="pos_nexi_payment.NexiReceiptInfo">
+        <div class="nexi-receipt-info" style="margin-top: 4px; margin-bottom: 4px;">
+            <div style="text-align: center; font-weight: bold; border-top: 1px dashed black; padding-top: 4px;">
+                NEXI Payment
+            </div>
+            <t t-if="line.card_type">
+                <div>Card: <t t-esc="line.card_type"/></div>
+            </t>
+            <t t-if="line.nexi_card_number">
+                <div>PAN: <t t-esc="line.nexi_card_number"/></div>
+            </t>
+            <t t-if="line.nexi_authorization_code">
+                <div>Auth: <t t-esc="line.nexi_authorization_code"/></div>
+            </t>
+            <t t-if="line.nexi_card_entry_mode">
+                <div>Entry: <t t-esc="line.nexi_card_entry_mode"/></div>
+            </t>
+            <t t-if="line.nexi_reference">
+                <div>Ref: <t t-esc="line.nexi_reference"/></div>
+            </t>
+        </div>
+    </t>
+
+    <!-- Extend POS receipt to inject NEXI card details -->
+    <t t-name="pos_nexi_payment.OrderReceiptNexi" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('paymentlines')]" position="after">
+            <t t-foreach="order.payment_ids" t-as="line" t-key="line.cid">
+                <t t-if="line.card_type or line.nexi_authorization_code or line.nexi_reference">
+                    <t t-call="pos_nexi_payment.NexiReceiptInfo">
+                        <t t-set="line" t-value="line"/>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </t>
+
+</templates>

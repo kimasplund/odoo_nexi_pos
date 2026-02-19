@@ -1,0 +1,269 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_nexi_light
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 00:00+0000\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_terminal_id
+msgid "Terminal ID"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_api_key
+msgid "API Key"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_test_mode
+msgid "Test Mode"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Terminal Status"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_last_heartbeat
+msgid "Last Heartbeat"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_latest_response
+msgid "Latest Response"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_webhook_url
+msgid "Webhook URL"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_terminal_id
+msgid "NEXI terminal identifier (e.g., TERM001). This is the unique identifier for your physical terminal."
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_api_key
+msgid "Your NEXI API key for authentication. Keep this secure."
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_test_mode
+msgid "Run transactions in the test environment. No real charges will be made."
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Current status of the terminal (updated via polling)"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_last_heartbeat
+msgid "Last time the terminal was seen online"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_latest_response
+msgid "Buffer for the latest asynchronous response from NEXI"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_webhook_url
+msgid "URL to configure in NEXI dashboard for receiving notifications"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Unknown"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Online"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Offline"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Busy"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Error"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Terminal %(terminal)s is already used on payment method %(method)s."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "API Key is required for NEXI payment method %(method)s."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI API Key is not configured for payment method %s"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI API Error (%(status)s): %(message)s"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection to NEXI timed out. Please try again."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Could not connect to NEXI. Please check your internet connection."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Error communicating with NEXI: %s"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection Successful"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Successfully connected to NEXI terminal."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection Failed"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Terminal ID is not configured"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Failed to send payment to terminal: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Failed to cancel payment: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment confirmed on terminal but failed to finalize: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment failed"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment timeout - no response from terminal"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Payment"
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Please complete the payment on the terminal..."
+msgstr ""
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Error"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_form_nexi
+msgid "NEXI Terminal Status"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_form_nexi
+msgid "Test Connection"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_search_nexi
+msgid "NEXI"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "NEXI Payment"
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Card: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "PAN: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Auth: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Entry: "
+msgstr ""
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Ref: "
+msgstr ""

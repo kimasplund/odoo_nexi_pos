@@ -1,0 +1,1126 @@
+/**
+ * NEXI Payment Module CSS
+ * Brand colors: Primary Blue #0044cc, White #ffffff
+ * Accent: Light Blue #0066ff, Dark Blue #003399
+ */
+
+/* ========================================
+   CSS Variables
+   ======================================== */
+:root {
+    --nexi-primary: #0044cc;
+    --nexi-primary-light: #0066ff;
+    --nexi-primary-dark: #003399;
+    --nexi-success: #28a745;
+    --nexi-danger: #dc3545;
+    --nexi-warning: #ffc107;
+    --nexi-info: #17a2b8;
+    --nexi-white: #ffffff;
+    --nexi-gray-100: #f8f9fa;
+    --nexi-gray-200: #e9ecef;
+    --nexi-gray-300: #dee2e6;
+    --nexi-gray-600: #6c757d;
+    --nexi-gray-800: #343a40;
+    --nexi-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --nexi-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --nexi-radius: 8px;
+    --nexi-radius-lg: 12px;
+    --nexi-transition: all 0.3s ease;
+}
+
+/* ========================================
+   NEXI Payment Button
+   ======================================== */
+.nexi-payment-button {
+    background: linear-gradient(135deg, var(--nexi-primary) 0%, var(--nexi-primary-dark) 100%);
+    border: none;
+    border-radius: var(--nexi-radius);
+    color: var(--nexi-white);
+    min-height: 60px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--nexi-transition);
+    box-shadow: var(--nexi-shadow);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nexi-payment-button:hover {
+    background: linear-gradient(135deg, var(--nexi-primary-light) 0%, var(--nexi-primary) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--nexi-shadow-lg);
+}
+
+.nexi-payment-button:active {
+    transform: translateY(0);
+    box-shadow: var(--nexi-shadow);
+}
+
+.nexi-payment-button.disabled,
+.nexi-payment-button:disabled {
+    background: var(--nexi-gray-300);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.nexi-payment-button .nexi-icon {
+    font-size: 20px;
+}
+
+/* Payment Method Button with NEXI branding */
+.nexi-payment-method {
+    position: relative;
+    background: var(--nexi-white);
+    border: 2px solid var(--nexi-primary);
+    border-radius: var(--nexi-radius);
+    padding: 15px;
+    transition: var(--nexi-transition);
+}
+
+.nexi-payment-method:hover {
+    background: var(--nexi-gray-100);
+    border-color: var(--nexi-primary-light);
+}
+
+.nexi-payment-method.disabled {
+    opacity: 0.6;
+    border-color: var(--nexi-gray-300);
+    cursor: not-allowed;
+}
+
+.nexi-terminal-indicator {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.nexi-terminal-indicator i {
+    font-size: 10px;
+}
+
+/* ========================================
+   NEXI Payment Dialog
+   ======================================== */
+.nexi-payment-dialog .modal-content {
+    border: none;
+    border-radius: var(--nexi-radius-lg);
+    box-shadow: var(--nexi-shadow-lg);
+}
+
+.nexi-dialog-header {
+    background: linear-gradient(135deg, var(--nexi-primary) 0%, var(--nexi-primary-dark) 100%);
+    color: var(--nexi-white);
+    border-radius: var(--nexi-radius-lg) var(--nexi-radius-lg) 0 0;
+    padding: 20px;
+}
+
+.nexi-dialog-header .modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nexi-dialog-body {
+    padding: 25px;
+}
+
+.nexi-amount-display {
+    text-align: center;
+    padding: 20px;
+    background: var(--nexi-gray-100);
+    border-radius: var(--nexi-radius);
+    margin-bottom: 25px;
+}
+
+.nexi-amount-label {
+    display: block;
+    font-size: 14px;
+    color: var(--nexi-gray-600);
+    margin-bottom: 8px;
+}
+
+.nexi-amount-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--nexi-primary);
+}
+
+.nexi-terminal-section {
+    margin-bottom: 20px;
+}
+
+.nexi-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--nexi-gray-800);
+    margin-bottom: 15px;
+}
+
+.nexi-terminal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nexi-terminal-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid var(--nexi-gray-300);
+    border-radius: var(--nexi-radius);
+    cursor: pointer;
+    transition: var(--nexi-transition);
+    background: var(--nexi-white);
+}
+
+.nexi-terminal-option:hover {
+    border-color: var(--nexi-primary-light);
+    background: var(--nexi-gray-100);
+}
+
+.nexi-terminal-option.selected {
+    border-color: var(--nexi-primary);
+    background: rgba(0, 68, 204, 0.05);
+}
+
+.nexi-terminal-option.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nexi-terminal-radio {
+    margin-right: 12px;
+}
+
+.nexi-terminal-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.nexi-terminal-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nexi-terminal-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nexi-default-badge {
+    background: var(--nexi-primary);
+    color: var(--nexi-white);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.nexi-terminal-status {
+    font-size: 13px;
+}
+
+.nexi-no-terminals {
+    padding: 20px;
+    text-align: center;
+}
+
+.nexi-instructions {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(23, 162, 184, 0.1);
+    border-left: 4px solid var(--nexi-info);
+    border-radius: 0 var(--nexi-radius) var(--nexi-radius) 0;
+    font-size: 14px;
+    color: var(--nexi-gray-800);
+}
+
+.nexi-instructions i {
+    color: var(--nexi-info);
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.nexi-dialog-footer {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid var(--nexi-gray-200);
+}
+
+.nexi-btn-cancel,
+.nexi-btn-start {
+    min-width: 140px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    border-radius: var(--nexi-radius);
+}
+
+.nexi-btn-start {
+    background: var(--nexi-primary);
+    border-color: var(--nexi-primary);
+}
+
+.nexi-btn-start:hover:not(:disabled) {
+    background: var(--nexi-primary-dark);
+    border-color: var(--nexi-primary-dark);
+}
+
+.nexi-btn-start:disabled {
+    background: var(--nexi-gray-300);
+    border-color: var(--nexi-gray-300);
+    cursor: not-allowed;
+}
+
+/* ========================================
+   NEXI Waiting Screen
+   ======================================== */
+.nexi-waiting-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.nexi-waiting-content {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Loading Animation */
+.nexi-loading-animation {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+}
+
+.nexi-spinner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.nexi-spinner-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: var(--nexi-primary);
+    animation: nexi-spin 1.5s linear infinite;
+}
+
+.nexi-spinner-ring:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nexi-spinner-ring:nth-child(2) {
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+    border-top-color: var(--nexi-primary-light);
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+.nexi-spinner-ring:nth-child(3) {
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    border-top-color: var(--nexi-primary-dark);
+    animation-duration: 0.75s;
+}
+
+@keyframes nexi-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nexi-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--nexi-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: nexi-pulse 2s ease-in-out infinite;
+}
+
+.nexi-pulse i {
+    color: var(--nexi-white);
+    font-size: 20px;
+}
+
+@keyframes nexi-pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+
+.nexi-waiting-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--nexi-gray-800);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nexi-waiting-status {
+    font-size: 16px;
+    color: var(--nexi-gray-600);
+    margin-bottom: 25px;
+}
+
+.nexi-waiting-amount {
+    background: var(--nexi-gray-100);
+    padding: 20px;
+    border-radius: var(--nexi-radius);
+    margin-bottom: 20px;
+}
+
+.nexi-waiting-amount .nexi-amount-label {
+    font-size: 14px;
+    color: var(--nexi-gray-600);
+}
+
+.nexi-waiting-amount .nexi-amount-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--nexi-primary);
+}
+
+.nexi-waiting-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    color: var(--nexi-gray-600);
+    margin-bottom: 20px;
+}
+
+.nexi-timer-value {
+    font-weight: 600;
+    color: var(--nexi-primary);
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.nexi-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--nexi-gray-200);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.nexi-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--nexi-primary) 0%, var(--nexi-primary-light) 100%);
+    border-radius: 3px;
+    animation: nexi-progress 3s ease-in-out infinite;
+}
+
+@keyframes nexi-progress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+.nexi-btn-cancel-payment {
+    min-width: 200px;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--nexi-radius);
+    border-width: 2px;
+}
+
+.nexi-waiting-instructions {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: var(--nexi-radius);
+    font-size: 14px;
+    color: var(--nexi-gray-600);
+}
+
+.nexi-waiting-instructions i {
+    color: var(--nexi-warning);
+    margin-right: 5px;
+}
+
+/* ========================================
+   NEXI Payment Result
+   ======================================== */
+.nexi-result-dialog .modal-content {
+    border: none;
+    border-radius: var(--nexi-radius-lg);
+    overflow: hidden;
+}
+
+.nexi-result-dialog.nexi-success .modal-content {
+    border: 3px solid var(--nexi-success);
+}
+
+.nexi-result-dialog.nexi-error .modal-content {
+    border: 3px solid var(--nexi-danger);
+}
+
+.nexi-result-header {
+    padding: 20px;
+    color: var(--nexi-white);
+}
+
+.nexi-success-header {
+    background: var(--nexi-success);
+}
+
+.nexi-error-header {
+    background: var(--nexi-danger);
+}
+
+.nexi-result-header .modal-title {
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nexi-result-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.nexi-result-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    color: var(--nexi-white);
+}
+
+.nexi-success-icon {
+    background: var(--nexi-success);
+    animation: nexi-success-pop 0.5s ease-out;
+}
+
+.nexi-error-icon {
+    background: var(--nexi-danger);
+    animation: nexi-error-shake 0.5s ease-out;
+}
+
+@keyframes nexi-success-pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes nexi-error-shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.nexi-result-message {
+    font-size: 18px;
+    color: var(--nexi-gray-800);
+    margin-bottom: 25px;
+}
+
+.nexi-error-message {
+    color: var(--nexi-danger);
+    font-weight: 500;
+}
+
+.nexi-transaction-details {
+    background: var(--nexi-gray-100);
+    border-radius: var(--nexi-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.nexi-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--nexi-gray-300);
+}
+
+.nexi-detail-row:last-child {
+    border-bottom: none;
+}
+
+.nexi-detail-label {
+    font-weight: 600;
+    color: var(--nexi-gray-600);
+}
+
+.nexi-detail-value {
+    color: var(--nexi-gray-800);
+    font-weight: 500;
+}
+
+.nexi-detail-value.nexi-amount {
+    font-size: 18px;
+    color: var(--nexi-primary);
+    font-weight: 700;
+}
+
+.nexi-error-details {
+    margin-bottom: 20px;
+}
+
+.nexi-troubleshooting {
+    text-align: left;
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: var(--nexi-radius);
+    padding: 20px;
+}
+
+.nexi-troubleshooting h5 {
+    color: var(--nexi-gray-800);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nexi-troubleshooting ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--nexi-gray-600);
+}
+
+.nexi-troubleshooting li {
+    margin-bottom: 5px;
+}
+
+.nexi-result-footer {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: var(--nexi-gray-100);
+}
+
+.nexi-btn-close,
+.nexi-btn-print,
+.nexi-btn-retry {
+    min-width: 140px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    border-radius: var(--nexi-radius);
+}
+
+.nexi-btn-retry {
+    background: var(--nexi-primary);
+    border-color: var(--nexi-primary);
+}
+
+/* ========================================
+   Terminal Status Indicator
+   ======================================== */
+.nexi-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--nexi-transition);
+    position: relative;
+}
+
+.nexi-status-online {
+    background: rgba(40, 167, 69, 0.15);
+    color: var(--nexi-success);
+}
+
+.nexi-status-offline {
+    background: rgba(220, 53, 69, 0.15);
+    color: var(--nexi-danger);
+}
+
+.nexi-status-busy {
+    background: rgba(255, 193, 7, 0.15);
+    color: #d39e00;
+}
+
+.nexi-status-warning {
+    background: rgba(255, 193, 7, 0.15);
+    color: #856404;
+}
+
+.nexi-status-unknown {
+    background: var(--nexi-gray-200);
+    color: var(--nexi-gray-600);
+}
+
+.nexi-status-indicator:hover {
+    filter: brightness(0.95);
+}
+
+.nexi-status-label {
+    white-space: nowrap;
+}
+
+/* Status Dropdown */
+.nexi-status-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: var(--nexi-white);
+    border-radius: var(--nexi-radius);
+    box-shadow: var(--nexi-shadow-lg);
+    min-width: 220px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.nexi-status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--nexi-gray-100);
+    border-bottom: 1px solid var(--nexi-gray-200);
+    font-weight: 600;
+    color: var(--nexi-gray-800);
+}
+
+.nexi-refresh-btn {
+    background: none;
+    border: none;
+    color: var(--nexi-primary);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: var(--nexi-transition);
+}
+
+.nexi-refresh-btn:hover {
+    background: rgba(0, 68, 204, 0.1);
+}
+
+.nexi-status-list {
+    padding: 10px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.nexi-status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    font-size: 13px;
+}
+
+.nexi-status-item:hover {
+    background: var(--nexi-gray-100);
+}
+
+.nexi-status-dot {
+    font-size: 10px;
+}
+
+.nexi-terminal-name {
+    flex: 1;
+    color: var(--nexi-gray-800);
+}
+
+.nexi-terminal-state {
+    color: var(--nexi-gray-600);
+    font-size: 12px;
+}
+
+.nexi-status-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--nexi-gray-100);
+    border-top: 1px solid var(--nexi-gray-200);
+    font-size: 12px;
+    color: var(--nexi-gray-600);
+}
+
+.nexi-last-refresh {
+    font-family: monospace;
+}
+
+/* Terminal Status Classes */
+.nexi-terminal-online {
+    color: var(--nexi-success);
+}
+
+.nexi-terminal-offline {
+    color: var(--nexi-danger);
+}
+
+.nexi-terminal-busy {
+    color: var(--nexi-warning);
+}
+
+.nexi-terminal-error {
+    color: var(--nexi-danger);
+}
+
+.nexi-terminal-unknown {
+    color: var(--nexi-gray-600);
+}
+
+/* ========================================
+   Terminal Status Popup
+   ======================================== */
+.nexi-terminal-popup .modal-content {
+    border-radius: var(--nexi-radius-lg);
+}
+
+.nexi-summary-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--nexi-gray-100);
+    border-radius: var(--nexi-radius);
+}
+
+.nexi-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.nexi-summary-item.nexi-online {
+    color: var(--nexi-success);
+}
+
+.nexi-terminal-table .table {
+    margin-bottom: 0;
+}
+
+.nexi-terminal-table .badge {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* ========================================
+   Payment Line Extension
+   ======================================== */
+.nexi-payment-line {
+    position: relative;
+}
+
+.nexi-payment-line.nexi-line-completed {
+    border-left: 4px solid var(--nexi-success);
+}
+
+.nexi-payment-line .nexi-transaction-ref {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--nexi-gray-600);
+    margin-left: 10px;
+}
+
+.nexi-payment-line .nexi-payment-status {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+/* ========================================
+   Last Transaction
+   ======================================== */
+.nexi-last-transaction {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: var(--nexi-radius);
+    background: var(--nexi-gray-100);
+    border-left: 4px solid var(--nexi-gray-600);
+}
+
+.nexi-last-transaction.nexi-transaction-success {
+    border-left-color: var(--nexi-success);
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.nexi-last-transaction.nexi-transaction-error {
+    border-left-color: var(--nexi-danger);
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.nexi-transaction-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.nexi-transaction-body {
+    padding-left: 24px;
+}
+
+.nexi-transaction-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--nexi-primary);
+}
+
+.nexi-transaction-ref {
+    font-size: 12px;
+    color: var(--nexi-gray-600);
+    font-family: monospace;
+}
+
+.nexi-transaction-time {
+    font-size: 12px;
+    color: var(--nexi-gray-600);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet (primary POS device) */
+@media (max-width: 1024px) {
+    .nexi-payment-dialog .modal-dialog {
+        margin: 10px;
+    }
+    
+    .nexi-dialog-body {
+        padding: 20px;
+    }
+    
+    .nexi-amount-value {
+        font-size: 28px;
+    }
+    
+    .nexi-waiting-title {
+        font-size: 20px;
+    }
+    
+    .nexi-loading-animation {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .nexi-payment-button {
+        min-height: 55px;
+        font-size: 15px;
+    }
+    
+    .nexi-dialog-header {
+        padding: 15px;
+    }
+    
+    .nexi-dialog-header .modal-title {
+        font-size: 18px;
+    }
+    
+    .nexi-dialog-body {
+        padding: 15px;
+    }
+    
+    .nexi-amount-value {
+        font-size: 24px;
+    }
+    
+    .nexi-terminal-option {
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .nexi-dialog-footer {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nexi-btn-cancel,
+    .nexi-btn-start {
+        width: 100%;
+        min-height: 44px;
+    }
+    
+    .nexi-waiting-content {
+        padding: 15px;
+    }
+    
+    .nexi-waiting-title {
+        font-size: 18px;
+    }
+    
+    .nexi-loading-animation {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .nexi-result-body {
+        padding: 20px;
+    }
+    
+    .nexi-result-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .nexi-result-footer {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .nexi-btn-close,
+    .nexi-btn-print,
+    .nexi-btn-retry {
+        width: 100%;
+        min-height: 44px;
+    }
+    
+    .nexi-status-indicator {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .nexi-status-label {
+        display: none;
+    }
+}
+
+/* Touch optimization */
+@media (pointer: coarse) {
+    .nexi-payment-button,
+    .nexi-btn-cancel,
+    .nexi-btn-start,
+    .nexi-btn-close,
+    .nexi-btn-print,
+    .nexi-btn-retry,
+    .nexi-btn-cancel-payment,
+    .nexi-terminal-option {
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .nexi-terminal-radio input[type="radio"] {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .nexi-payment-button {
+        border: 2px solid currentColor;
+    }
+    
+    .nexi-terminal-option.selected {
+        outline: 2px solid var(--nexi-primary);
+        outline-offset: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .nexi-spinner-ring,
+    .nexi-pulse,
+    .nexi-progress-fill {
+        animation: none;
+    }
+    
+    .nexi-payment-button,
+    .nexi-terminal-option,
+    .nexi-status-indicator {
+        transition: none;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+    .nexi-waiting-screen,
+    .nexi-payment-dialog,
+    .nexi-status-indicator,
+    .nexi-btn-cancel,
+    .nexi-btn-close,
+    .nexi-btn-retry {
+        display: none !important;
+    }
+    
+    .nexi-transaction-details {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+}

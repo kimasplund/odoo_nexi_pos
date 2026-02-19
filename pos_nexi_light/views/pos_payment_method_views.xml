@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Extend POS Payment Method form view to add NEXI configuration -->
+    <record id="view_pos_payment_method_form_nexi" model="ir.ui.view">
+        <field name="name">pos.payment.method.form.nexi</field>
+        <field name="model">pos.payment.method</field>
+        <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add terminal selection after the use_payment_terminal field -->
+            <field name="use_payment_terminal" position="after">
+                <field name="nexi_terminal_id" 
+                       invisible="use_payment_terminal != 'nexi'"
+                       required="use_payment_terminal == 'nexi'"/>
+                <field name="nexi_api_key_id"
+                       invisible="use_payment_terminal != 'nexi'"
+                       required="use_payment_terminal == 'nexi'"/>
+                <field name="nexi_api_key_secret"
+                       invisible="use_payment_terminal != 'nexi'"
+                       required="use_payment_terminal == 'nexi'"
+                       password="True"/>
+                <field name="nexi_test_mode"
+                       invisible="use_payment_terminal != 'nexi'"/>
+                <field name="nexi_print_enabled"
+                       invisible="use_payment_terminal != 'nexi'"/>
+                <field name="nexi_print_content"
+                       invisible="use_payment_terminal != 'nexi' or not nexi_print_enabled"/>
+            </field>
+            
+            <!-- Add terminal status and test button -->
+            <sheet position="inside">
+                <group string="NEXI Terminal Status" 
+                       invisible="use_payment_terminal != 'nexi'">
+                    <group>
+                        <field name="nexi_terminal_status" 
+                               widget="badge"
+                               decoration-success="nexi_terminal_status == 'online'"
+                               decoration-warning="nexi_terminal_status == 'busy'"
+                               decoration-danger="nexi_terminal_status == 'error'"/>
+                        <field name="nexi_last_heartbeat"/>
+                    </group>
+                    <group>
+                        <button name="action_nexi_test_connection"
+                                type="object"
+                                string="Test Connection"
+                                class="btn-primary"
+                                icon="fa-plug"/>
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+    <!-- Extend POS Payment Method tree view to show NEXI indicator -->
+    <record id="view_pos_payment_method_tree_nexi" model="ir.ui.view">
+        <field name="name">pos.payment.method.tree.nexi</field>
+        <field name="model">pos.payment.method</field>
+        <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="nexi_terminal_id" 
+                       invisible="use_payment_terminal != 'nexi'"
+                       optional="show"/>
+                <field name="nexi_terminal_status" 
+                       invisible="use_payment_terminal != 'nexi'"
+                       widget="badge"
+                       decoration-success="nexi_terminal_status == 'online'"
+                       decoration-warning="nexi_terminal_status == 'busy'"
+                       decoration-danger="nexi_terminal_status == 'error'"
+                       optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Extend POS Payment Method search view -->
+    <record id="view_pos_payment_method_search_nexi" model="ir.ui.view">
+        <field name="name">pos.payment.method.search.nexi</field>
+        <field name="model">pos.payment.method</field>
+        <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_search"/>
+        <field name="arch" type="xml">
+            <filter name="active" position="after">
+                <separator/>
+                <filter string="NEXI" 
+                        name="nexi"
+                        domain="[('use_payment_terminal', '=', 'nexi')]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

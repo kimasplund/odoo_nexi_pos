@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- NEXI Receipt Info Section - card details for printed receipt -->
+    <t t-name="pos_nexi_light.NexiReceiptInfo">
+        <div class="nexi-receipt-info" style="margin-top: 4px; margin-bottom: 4px;">
+            <div style="text-align: center; font-weight: bold; border-top: 1px dashed black; padding-top: 4px;">
+                NEXI Payment
+            </div>
+            <t t-if="line.card_type">
+                <div>Card: <t t-esc="line.card_type"/></div>
+            </t>
+            <t t-if="line.nexi_card_number">
+                <div>PAN: <t t-esc="line.nexi_card_number"/></div>
+            </t>
+            <t t-if="line.nexi_authorization_code">
+                <div>Auth: <t t-esc="line.nexi_authorization_code"/></div>
+            </t>
+            <t t-if="line.nexi_card_entry_mode">
+                <div>Entry: <t t-esc="line.nexi_card_entry_mode"/></div>
+            </t>
+            <t t-if="line.nexi_reference">
+                <div>Ref: <t t-esc="line.nexi_reference"/></div>
+            </t>
+        </div>
+    </t>
+
+    <!-- Extend the POS receipt to show NEXI card details for each NEXI payment line -->
+    <t t-name="pos_nexi_light.OrderReceiptNexi" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('paymentlines')]" position="after">
+            <t t-foreach="order.payment_ids" t-as="line" t-key="line.cid">
+                <t t-if="line.card_type or line.nexi_authorization_code or line.nexi_reference">
+                    <t t-call="pos_nexi_light.NexiReceiptInfo">
+                        <t t-set="line" t-value="line"/>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </t>
+
+</templates>

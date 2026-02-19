@@ -1,0 +1,2175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_nexi_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 00:00+0000\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Swedish\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_terminal
+msgid "NEXI Payment Terminal"
+msgstr "NEXI-betalningsterminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_transaction
+msgid "NEXI Payment Transaction"
+msgstr "NEXI-betalningstransaktion"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_security_mixin
+msgid "NEXI Security Mixin"
+msgstr "NEXI-säkerhetsmixin"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__name
+msgid "Terminal Name"
+msgstr "Terminalnamn"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__terminal_id
+msgid "Terminal ID"
+msgstr "Terminal-ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__api_key
+msgid "API Key"
+msgstr "API-nyckel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__webhook_secret
+msgid "Webhook Secret"
+msgstr "Webhook-hemlighet"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__min_amount
+msgid "Minimum Amount"
+msgstr "Minimibelopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__max_amount
+msgid "Maximum Amount"
+msgstr "Maximibelopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__currency_id
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__company_id
+msgid "Company"
+msgstr "Företag"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__pos_config_ids
+msgid "POS Configurations"
+msgstr "Kassakonfigurationer"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__state
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__state
+msgid "State"
+msgstr "Status"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__last_heartbeat
+msgid "Last Heartbeat"
+msgstr "Senaste livstecken"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__transaction_count
+msgid "Transaction Count"
+msgstr "Antal transaktioner"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__success_rate
+msgid "Success Rate (%)"
+msgstr "Lyckade (%)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__notes
+msgid "Notes"
+msgstr "Anteckningar"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__external_id
+msgid "External ID"
+msgstr "Externt ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__terminal_id
+msgid "Terminal ID"
+msgstr "Terminal-ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__amount
+msgid "Amount"
+msgstr "Belopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__result_code
+msgid "Result Code"
+msgstr "Resultatkod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__result_message
+msgid "Result Message"
+msgstr "Resultatmeddelande"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__pos_order_id
+msgid "POS Order"
+msgstr "Kassaorder"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__payment_method_id
+msgid "Payment Method"
+msgstr "Betalningsmetod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__terminal_ref
+msgid "Terminal Reference"
+msgstr "Terminalreferens"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__confirm_attempts
+msgid "Confirm Attempts"
+msgstr "Bekräftelseförsök"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__purchase_request_time
+msgid "Purchase Request Time"
+msgstr "Tidpunkt för köpbegäran"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__confirm_request_time
+msgid "Confirm Request Time"
+msgstr "Tidpunkt för bekräftelsebegäran"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__notification_received
+msgid "Notification Received"
+msgstr "Avisering mottagen"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__notification_data
+msgid "Notification Data"
+msgstr "Aviseringsdata"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__webhook_verified
+msgid "Webhook Verified"
+msgstr "Webhook verifierad"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__webhook_timestamp
+msgid "Webhook Timestamp"
+msgstr "Webhook-tidsstämpel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__error_count
+msgid "Error Count"
+msgstr "Antal fel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__last_error
+msgid "Last Error"
+msgstr "Senaste fel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__nexi_reference
+msgid "NEXI Reference"
+msgstr "NEXI-referens"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_scheme
+msgid "Card Scheme"
+msgstr "Kortsystem"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorization_code
+msgid "Authorization Code"
+msgstr "Auktoriseringskod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorization_response_code
+msgid "Authorization Response Code"
+msgstr "Auktoriseringssvarskod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_entry_mode
+msgid "Card Entry Mode"
+msgstr "Kortinmatningsmetod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_number_customer
+msgid "Card Number (Customer)"
+msgstr "Kortnummer (kund)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_number_merchant
+msgid "Card Number (Merchant)"
+msgstr "Kortnummer (handlare)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__cardholder_verification
+msgid "Cardholder Verification"
+msgstr "Kortinnehavarverifiering"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__application_name
+msgid "Application Name"
+msgstr "Applikationsnamn"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__application_identifier
+msgid "Application Identifier"
+msgstr "Applikationsidentifierare"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_reference
+msgid "Acquirer Reference"
+msgstr "Inlösarreferens"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_terminal_id
+msgid "Acquirer Terminal ID"
+msgstr "Inlösar-terminal-ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_timestamp
+msgid "Acquirer Timestamp"
+msgstr "Inlösartidsstämpel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorized_amount
+msgid "Authorized Amount"
+msgstr "Auktoriserat belopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__captured_amount
+msgid "Captured Amount"
+msgstr "Debiterat belopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__receipt_customer
+msgid "Receipt (Customer)"
+msgstr "Kvitto (kund)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__receipt_merchant
+msgid "Receipt (Merchant)"
+msgstr "Kvitto (handlare)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment_method__is_nexi_payment
+msgid "NEXI Payment Terminal"
+msgstr "NEXI-betalningsterminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment_method__nexi_terminal_id
+msgid "NEXI Terminal"
+msgstr "NEXI-terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__nexi_terminal_ids
+msgid "NEXI Terminals"
+msgstr "NEXI-terminaler"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__has_nexi_terminal
+msgid "Has NEXI Terminal"
+msgstr "Har NEXI-terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__nexi_active_transactions
+msgid "Active NEXI Transactions"
+msgstr "Aktiva NEXI-transaktioner"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__nexi_transaction_ids
+msgid "NEXI Transactions"
+msgstr "NEXI-transaktioner"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__nexi_payment_count
+msgid "NEXI Payment Count"
+msgstr "Antal NEXI-betalningar"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__has_pending_nexi
+msgid "Has Pending NEXI Payments"
+msgstr "Har väntande NEXI-betalningar"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__nexi_transaction_id
+msgid "NEXI Transaction"
+msgstr "NEXI-transaktion"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__nexi_external_id
+msgid "NEXI External ID"
+msgstr "NEXI externt ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__is_nexi_payment
+msgid "Is NEXI Payment"
+msgstr "Är NEXI-betalning"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__inactive
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__error
+msgid "Error"
+msgstr "Fel"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__pending
+msgid "Pending"
+msgstr "Väntande"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__processing
+msgid "Processing"
+msgstr "Bearbetas"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__awaiting_confirm
+msgid "Awaiting Confirmation"
+msgstr "Inväntar bekräftelse"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__confirmed
+msgid "Confirmed"
+msgstr "Bekräftad"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__failed
+msgid "Failed"
+msgstr "Misslyckades"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__cancelled
+msgid "Cancelled"
+msgstr "Avbruten"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__name
+msgid "Human-readable name for this terminal"
+msgstr "Läsbart namn för denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__terminal_id
+msgid "Unique terminal identifier provided by NEXI (max 32 chars)"
+msgstr "Unik terminalidentifierare från NEXI (max 32 tecken)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__api_key
+msgid "Encrypted API key for terminal authentication. Only system administrators can view this."
+msgstr "Krypterad API-nyckel för terminalautentisering. Endast systemadministratörer kan se denna."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__webhook_secret
+msgid "Secret key for verifying webhook signatures (HMAC-SHA256)"
+msgstr "Hemlig nyckel för verifiering av webhook-signaturer (HMAC-SHA256)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__min_amount
+msgid "Minimum transaction amount allowed"
+msgstr "Lägsta tillåtna transaktionsbelopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__max_amount
+msgid "Maximum transaction amount allowed"
+msgstr "Högsta tillåtna transaktionsbelopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__currency_id
+msgid "Default currency for this terminal"
+msgstr "Standardvaluta för denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__company_id
+msgid "Company this terminal belongs to"
+msgstr "Företagstillhörighet för denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__pos_config_ids
+msgid "Point of Sale configurations that can use this terminal"
+msgstr "Kassakonfigurationer som kan använda denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__state
+msgid "Current operational state of the terminal"
+msgstr "Aktuellt drifttillstånd för terminalen"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__last_heartbeat
+msgid "Timestamp of last successful communication with terminal"
+msgstr "Tidsstämpel för senaste lyckade kommunikation med terminalen"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__transaction_count
+msgid "Number of transactions processed by this terminal"
+msgstr "Antal transaktioner bearbetade av denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__success_rate
+msgid "Percentage of successful transactions"
+msgstr "Andel lyckade transaktioner i procent"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__active
+msgid "Whether this terminal is active and can be used"
+msgstr "Om denna terminal är aktiv och kan användas"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__notes
+msgid "Additional notes about this terminal"
+msgstr "Ytterligare anteckningar om denna terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__external_id
+msgid "Unique transaction identifier (UUID)"
+msgstr "Unik transaktionsidentifierare (UUID)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__terminal_id
+msgid "NEXI terminal identifier"
+msgstr "NEXI-terminalidentifierare"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__amount
+msgid "Transaction amount"
+msgstr "Transaktionsbelopp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__currency_id
+msgid "Transaction currency"
+msgstr "Transaktionsvaluta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__state
+msgid "Current transaction state"
+msgstr "Aktuellt transaktionstillstånd"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__result_code
+msgid "Result code from NEXI API"
+msgstr "Resultatkod från NEXI API"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__result_message
+msgid "Human-readable result message"
+msgstr "Läsbart resultatmeddelande"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__pos_order_id
+msgid "Associated Point of Sale order"
+msgstr "Tillhörande kassaorder"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__payment_method_id
+msgid "POS payment method used"
+msgstr "Använd kassabetalningsmetod"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__terminal_ref
+msgid "Reference to terminal configuration"
+msgstr "Referens till terminalkonfiguration"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment_method__is_nexi_payment
+msgid "Enable this to use a NEXI payment terminal for this payment method."
+msgstr "Aktivera detta för att använda en NEXI-betalningsterminal för denna betalningsmetod."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment_method__nexi_terminal_id
+msgid "The NEXI terminal associated with this payment method."
+msgstr "NEXI-terminalen kopplad till denna betalningsmetod."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_session__nexi_terminal_ids
+msgid "NEXI terminals available in this session."
+msgstr "NEXI-terminaler tillgängliga i denna session."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_order__nexi_transaction_ids
+msgid "All NEXI transactions associated with this order."
+msgstr "Alla NEXI-transaktioner kopplade till denna order."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment__nexi_transaction_id
+msgid "The linked NEXI transaction for this payment."
+msgstr "Den länkade NEXI-transaktionen för denna betalning."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment__nexi_external_id
+msgid "External reference from NEXI for this transaction."
+msgstr "Extern referens från NEXI för denna transaktion."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_user
+msgid "Can process payments using NEXI terminals. Cannot configure terminals or process refunds."
+msgstr "Kan bearbeta betalningar med NEXI-terminaler. Kan inte konfigurera terminaler eller bearbeta återbäringar."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_manager
+msgid "Can configure NEXI terminals and process refunds. Cannot manage API keys."
+msgstr "Kan konfigurera NEXI-terminaler och bearbeta återbäringar. Kan inte hantera API-nycklar."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_admin
+msgid "Full access to NEXI payment configuration including API key management."
+msgstr "Full tillgång till NEXI-betalningskonfiguration inklusive hantering av API-nycklar."
+
+#. module: pos_nexi_payment
+#: model:ir.module.category,name:pos_nexi_payment.module_category_nexi_payment
+msgid "NEXI Payment"
+msgstr "NEXI-betalning"
+
+#. module: pos_nexi_payment
+#: model:ir.module.category,description:pos_nexi_payment.module_category_nexi_payment
+msgid "Access rights for NEXI payment terminal integration"
+msgstr "Åtkomsträttigheter för NEXI-betalningsterminalsintegration"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_user
+msgid "NEXI User"
+msgstr "NEXI-användare"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_manager
+msgid "NEXI Manager"
+msgstr "NEXI-chef"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_admin
+msgid "NEXI Administrator"
+msgstr "NEXI-administratör"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_user
+msgid "NEXI: User"
+msgstr "NEXI: Användare"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_manager
+msgid "NEXI: Manager"
+msgstr "NEXI: Chef"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_admin
+msgid "NEXI: Administrator"
+msgstr "NEXI: Administratör"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_multi_company
+msgid "NEXI Transaction: Multi-Company"
+msgstr "NEXI-transaktion: Multiföretagsregel"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_terminal_multi_company
+msgid "NEXI Terminal: Multi-Company"
+msgstr "NEXI-terminal: Multiföretagsregel"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_admin
+msgid "NEXI Transaction: Admin Access"
+msgstr "NEXI-transaktion: Administratörsåtkomst"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_terminal_admin
+msgid "NEXI Terminal: Admin Access"
+msgstr "NEXI-terminal: Administratörsåtkomst"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_user
+msgid "NEXI Transaction: User Can See Own Transactions"
+msgstr "NEXI-transaktion: Användare kan se egna transaktioner"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_manager
+msgid "NEXI Transaction: Manager Can See All Transactions"
+msgstr "NEXI-transaktion: Chef kan se alla transaktioner"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_terminal
+msgid "NEXI Terminal"
+msgstr "NEXI-terminal"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_transaction
+msgid "NEXI Transaction"
+msgstr "NEXI-transaktion"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_session
+msgid "NEXI Session"
+msgstr "NEXI-session"
+
+#. module: pos_nexi_payment
+#: model:nexi.terminal,constraint:pos_nexi_payment.unique_terminal_id
+msgid "Terminal ID must be unique!"
+msgstr "Terminal-ID måste vara unikt!"
+
+#. module: pos_nexi_payment
+#: model:nexi.transaction,constraint:pos_nexi_payment.unique_external_id
+msgid "External ID must be unique!"
+msgstr "Externt ID måste vara unikt!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to encrypt API key"
+msgstr "Kunde inte kryptera API-nyckeln"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Encryption key not available"
+msgstr "Krypteringsnyckel inte tillgänglig"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to decrypt API key"
+msgstr "Kunde inte dekryptera API-nyckeln"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID is required"
+msgstr "Terminal-ID krävs"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID must not exceed 32 characters"
+msgstr "Terminal-ID får inte överskrida 32 tecken"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID must contain only letters, numbers, hyphens, and underscores"
+msgstr "Terminal-ID får bara innehålla bokstäver, siffror, bindestreck och understreck"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key is required"
+msgstr "API-nyckel krävs"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key appears to be invalid (too short)"
+msgstr "API-nyckeln verkar vara ogiltig (för kort)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Minimum amount must be positive"
+msgstr "Minimibeloppet måste vara positivt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Maximum amount must be positive"
+msgstr "Maximibeloppet måste vara positivt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Minimum amount must be less than maximum amount"
+msgstr "Minimibeloppet måste vara lägre än maximibeloppet"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "POS Configuration \"%s\" must belong to the same company as the terminal"
+msgstr "Kassakonfigurationen \"%s\" måste tillhöra samma företag som terminalen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Cannot activate terminal without API key"
+msgstr "Kan inte aktivera terminal utan API-nyckel"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal Activated"
+msgstr "Terminal aktiverad"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is now active"
+msgstr "Terminalen \"%s\" är nu aktiv"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal Deactivated"
+msgstr "Terminal inaktiverad"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is now inactive"
+msgstr "Terminalen \"%s\" är nu inaktiv"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Connection Successful"
+msgstr "Anslutningen lyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is connected and ready"
+msgstr "Terminalen \"%s\" är ansluten och redo"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Connection test failed for terminal \"%s\":\n%s"
+msgstr "Anslutningstest misslyckades för terminal \"%s\":\n%s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.action_nexi_transaction
+#, python-format
+msgid "NEXI Transactions"
+msgstr "NEXI-transaktioner"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key Migration"
+msgstr "API-nyckelmigrering"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Migrated %s terminal API keys to encrypted storage"
+msgstr "Migrerade %s terminal-API-nycklar till krypterad lagring"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is not active (current state: %s)"
+msgstr "Terminalen \"%s\" är inte aktiv (aktuellt tillstånd: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Cannot delete terminal \"%s\" because it has associated transactions. Archive it instead."
+msgstr "Kan inte ta bort terminalen \"%s\" eftersom den har tillhörande transaktioner. Arkivera den istället."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction amount must be positive"
+msgstr "Transaktionsbeloppet måste vara positivt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction amount exceeds maximum"
+msgstr "Transaktionsbeloppet överskrider maximum"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID is required"
+msgstr "Externt ID krävs"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID exceeds maximum length"
+msgstr "Externt ID överskrider maximal längd"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID must contain only alphanumeric characters, hyphens, and underscores"
+msgstr "Externt ID får bara innehålla alfanumeriska tecken, bindestreck och understreck"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot initiate purchase: transaction is in \"%s\" state"
+msgstr "Kan inte påbörja köp: transaktionen är i tillståndet \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction is being processed by another worker. Please wait and try again."
+msgstr "Transaktionen bearbetas av en annan arbetare. Vänligen vänta och försök igen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "A transaction with external_id \"%s\" is already in progress"
+msgstr "En transaktion med external_id \"%s\" pågår redan"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" not found. Please configure the terminal first."
+msgstr "Terminalen \"%s\" hittades inte. Konfigurera terminalen först."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" is not active (state: %s)"
+msgstr "Terminalen \"%s\" är inte aktiv (tillstånd: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to initiate purchase: %s"
+msgstr "Kunde inte påbörja köp: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot confirm: transaction is in \"%s\" state"
+msgstr "Kan inte bekräfta: transaktionen är i tillståndet \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction is being confirmed by another worker"
+msgstr "Transaktionen bekräftas av en annan arbetare"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal not found"
+msgstr "Terminal hittades inte"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to confirm transaction: %s"
+msgstr "Kunde inte bekräfta transaktion: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot cancel transaction in \"%s\" state"
+msgstr "Kan inte avbryta transaktion i tillståndet \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only confirmed transactions can be voided (current state: \"%s\")"
+msgstr "Endast bekräftade transaktioner kan makuleras (aktuellt tillstånd: \"%s\")"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" not found"
+msgstr "Terminalen \"%s\" hittades inte"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only failed transactions can be retried"
+msgstr "Endast misslyckade transaktioner kan göras om"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/security/nexi_security.py:0
+#, python-format
+msgid "Too many attempts. Please try again later."
+msgstr "För många försök. Försök igen senare."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/security/nexi_security.py:0
+#, python-format
+msgid "You do not have permission to perform this action: %s"
+msgstr "Du har inte behörighet att utföra denna åtgärd: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "A NEXI terminal must be selected when \"NEXI Payment Terminal\" is enabled."
+msgstr "En NEXI-terminal måste väljas när \"NEXI-betalningsterminal\" är aktiverad."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Cannot use both NEXI payment terminal and another payment terminal for the same payment method. Please choose one."
+msgstr "Kan inte använda både NEXI-betalningsterminal och en annan betalningsterminal för samma betalningsmetod. Välj en."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount must be at least %.2f"
+msgstr "Betalningsbeloppet måste vara minst %.2f"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount exceeds maximum allowed (%.2f)"
+msgstr "Betalningsbeloppet överskrider maximalt tillåtet (%.2f)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Amount %.2f is below the terminal minimum (%.2f)."
+msgstr "Beloppet %.2f är under terminalens minimum (%.2f)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Amount %.2f exceeds the terminal maximum (%.2f)."
+msgstr "Beloppet %.2f överskrider terminalens maximum (%.2f)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount does not match order balance. Expected: %.2f, Received: %.2f"
+msgstr "Betalningsbeloppet matchar inte ordersaldot. Förväntat: %.2f, Mottaget: %.2f"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "You do not have permission to process NEXI payments."
+msgstr "Du har inte behörighet att bearbeta NEXI-betalningar."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "No remaining balance to pay for this order."
+msgstr "Inget återstående saldo att betala för denna order."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI terminal is not available. Please check the configuration."
+msgstr "NEXI-terminalen är inte tillgänglig. Kontrollera konfigurationen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Too many payment attempts. Please wait a moment."
+msgstr "För många betalningsförsök. Vänta en stund."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment initiated on terminal. Waiting for customer..."
+msgstr "Betalning startad på terminalen. Väntar på kund..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Error initiating payment: %s"
+msgstr "Fel vid start av betalning: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Permission denied."
+msgstr "Åtkomst nekad."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Invalid external ID format."
+msgstr "Ogiltigt format för externt ID."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "No active payment to cancel."
+msgstr "Ingen aktiv betalning att avbryta."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment cancelled successfully."
+msgstr "Betalningen avbröts."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Cancelled by user due to error: %s"
+msgstr "Avbruten av användare på grund av fel: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment marked as cancelled."
+msgstr "Betalningen markerad som avbruten."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Transaction not found."
+msgstr "Transaktionen hittades inte."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Waiting for terminal response..."
+msgstr "Väntar på svar från terminalen..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Processing on terminal..."
+msgstr "Bearbetas på terminalen..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Awaiting confirmation..."
+msgstr "Inväntar bekräftelse..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment confirmed!"
+msgstr "Betalningen bekräftad!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment failed: %s"
+msgstr "Betalningen misslyckades: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Unknown error"
+msgstr "Okänt fel"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment was cancelled."
+msgstr "Betalningen avbröts."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Unknown status."
+msgstr "Okänd status."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal ready."
+msgstr "Terminal redo."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal activated."
+msgstr "Terminal aktiverad."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal is not active (state: %s)"
+msgstr "Terminalen är inte aktiv (tillstånd: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Error: %s"
+msgstr "Fel: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Session closed while pending: %s"
+msgstr "Session stängd medan väntande: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal closed successfully."
+msgstr "Terminalen stängdes."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Cannot close session. There are %s pending NEXI transactions. Please complete or cancel all terminal transactions before closing."
+msgstr "Kan inte stänga sessionen. Det finns %s väntande NEXI-transaktioner. Slutför eller avbryt alla terminaltransaktioner innan stängning."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot add payment to a completed order."
+msgstr "Kan inte lägga till betalning på en slutförd order."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Payment amount must be greater than zero."
+msgstr "Betalningsbeloppet måste vara större än noll."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No NEXI payment method available."
+msgstr "Ingen NEXI-betalningsmetod tillgänglig."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "NEXI terminal is currently offline."
+msgstr "NEXI-terminalen är för närvarande offline."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Error adding payment: %s"
+msgstr "Fel vid tilläggning av betalning: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No NEXI payments to validate."
+msgstr "Inga NEXI-betalningar att validera."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Some NEXI payments are still pending terminal approval."
+msgstr "Vissa NEXI-betalningar väntar fortfarande på terminalbekräftelse."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Some NEXI payments failed: %s"
+msgstr "Vissa NEXI-betalningar misslyckades: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "All NEXI payments validated successfully."
+msgstr "Alla NEXI-betalningar validerades."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot mark order as paid. Some NEXI payments are still pending terminal approval. Please wait for the terminal to complete the transaction or cancel the payment."
+msgstr "Kan inte markera ordern som betald. Vissa NEXI-betalningar väntar fortfarande på terminalbekräftelse. Vänta på att terminalen slutför transaktionen eller avbryt betalningen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot mark order as paid. The following NEXI payments failed:\n%s\n\nPlease remove the failed payments and try again, or retry the payment."
+msgstr "Kan inte markera ordern som betald. Följande NEXI-betalningar misslyckades:\n%s\n\nTa bort de misslyckade betalningarna och försök igen, eller gör om betalningen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Transaction %s"
+msgstr "Transaktion %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot create invoice while NEXI payments are pending. Please wait for all terminal transactions to complete."
+msgstr "Kan inte skapa faktura medan NEXI-betalningar väntar. Vänta på att alla terminaltransaktioner slutförs."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No pending NEXI payments to cancel."
+msgstr "Inga väntande NEXI-betalningar att avbryta."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cancelled due to error: %s"
+msgstr "Avbruten på grund av fel: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cancelled %s transaction(s). Errors: %s"
+msgstr "Avbröt %s transaktion(er). Fel: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Successfully cancelled %s NEXI payment(s)."
+msgstr "Avbröt %s NEXI-betalning(ar)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "This is not a NEXI payment."
+msgstr "Detta är inte en NEXI-betalning."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Error retrying payment: %s"
+msgstr "Fel vid förnyat betalningsförsök: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "No NEXI transaction linked to this payment."
+msgstr "Ingen NEXI-transaktion kopplad till denna betalning."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Only confirmed transactions can be voided."
+msgstr "Endast bekräftade transaktioner kan makuleras."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Payment voided successfully."
+msgstr "Betalningen makulerades."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Error voiding payment: %s"
+msgstr "Fel vid makulering av betalning: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Chip"
+msgstr "Chip"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Contactless"
+msgstr "Kontaktlös"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Magnetic stripe"
+msgstr "Magnetremsa"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Manual"
+msgstr "Manuell"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Fallback"
+msgstr "Reservmetod"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Pending"
+msgstr "Väntande"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Processing"
+msgstr "Bearbetas"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Awaiting confirmation"
+msgstr "Väntar på bekräftelse"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Confirmed"
+msgstr "Bekräftad"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Failed"
+msgstr "Misslyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Cancelled"
+msgstr "Avbruten"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Unknown Terminal"
+msgstr "Okänd terminal"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+#, python-format
+msgid "Online"
+msgstr "Online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Offline"
+msgstr "Offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Busy"
+msgstr "Upptagen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Error"
+msgstr "Fel"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Unknown"
+msgstr "Okänd"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No Terminal Available"
+msgstr "Ingen terminal tillgänglig"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No NEXI terminal is currently available. Please verify that terminals are powered on and connected."
+msgstr "Ingen NEXI-terminal är tillgänglig just nu. Kontrollera att terminalerna är påslagna och anslutna."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "OK"
+msgstr "OK"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No active order"
+msgstr "Ingen aktiv order"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Error initializing payment"
+msgstr "Fel vid initiering av betalning"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "NEXI payment completed successfully!"
+msgstr "NEXI-betalning slutförd!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment failed"
+msgstr "Betalning misslyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "The terminal is offline. Please verify it is powered on and connected."
+msgstr "Terminalen är offline. Kontrollera att den är påslagen och ansluten."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "The terminal is busy with another transaction. Please wait and try again."
+msgstr "Terminalen är upptagen med en annan transaktion. Vänta och försök igen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment declined by the issuing bank."
+msgstr "Betalning nekad av utfärdande bank."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment timeout. The customer did not complete the operation on the terminal."
+msgstr "Tidsgräns för betalning. Kunden slutförde inte operationen på terminalen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Connection error. Please check the network connection."
+msgstr "Anslutningsfel. Kontrollera nätverksanslutningen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Invalid amount. Please verify the order amount."
+msgstr "Ogiltigt belopp. Kontrollera orderbeloppet."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Transaction not found. Please contact technical support."
+msgstr "Transaktion hittades inte. Kontakta teknisk support."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "An error occurred during payment. Please try again or use another payment method."
+msgstr "Ett fel uppstod under betalningen. Försök igen eller använd en annan betalningsmetod."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment timeout. The terminal operation took too long."
+msgstr "Tidsgräns för betalning. Terminaloperationen tog för lång tid."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_payment_method_form
+#, python-format
+msgid "NEXI"
+msgstr "NEXI"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "The order has already been paid"
+msgstr "Ordern har redan betalats"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "No NEXI terminal available. Please verify that terminals are powered on."
+msgstr "Ingen NEXI-terminal tillgänglig. Kontrollera att terminalerna är påslagna."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Waiting for terminal response..."
+msgstr "Väntar på svar från terminalen..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Processing payment on terminal..."
+msgstr "Bearbetar betalning på terminalen..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Payment authorized, confirming..."
+msgstr "Betalning auktoriserad, bekräftar..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Processing payment..."
+msgstr "Bearbetar betalning..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "No terminal configured"
+msgstr "Ingen terminal konfigurerad"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Offline"
+msgstr "NEXI Offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are offline"
+msgstr "Alla terminaler är offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Busy"
+msgstr "NEXI Upptagen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are busy"
+msgstr "Alla terminaler är upptagna"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Partial"
+msgstr "NEXI Delvis"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Some terminals are offline"
+msgstr "Vissa terminaler är offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Online"
+msgstr "NEXI Online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are online"
+msgstr "Alla terminaler är online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal status updated"
+msgstr "Terminalstatus uppdaterad"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal connection successful"
+msgstr "Terminalanslutning lyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal connection failed"
+msgstr "Terminalanslutning misslyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Error during connection test"
+msgstr "Fel under anslutningstest"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "No terminal available"
+msgstr "Ingen terminal tillgänglig"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "%s terminals available"
+msgstr "%s terminaler tillgängliga"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.action_nexi_terminal
+msgid "NEXI Terminals"
+msgstr "NEXI-terminaler"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "NEXI Terminal"
+msgstr "NEXI-terminal"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Test Connection"
+msgstr "Testa anslutning"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Activate"
+msgstr "Aktivera"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Deactivate"
+msgstr "Inaktivera"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Terminal Information"
+msgstr "Terminalinformation"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "POS Configurations"
+msgstr "Kassakonfigurationer"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Status"
+msgstr "Status"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Error"
+msgstr "Fel"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Group By"
+msgstr "Gruppera efter"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "State"
+msgstr "Status"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Company"
+msgstr "Företag"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+msgid "Create your first NEXI Terminal"
+msgstr "Skapa din första NEXI-terminal"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+msgid "Configure NEXI payment terminals to process card payments in your Point of Sale."
+msgstr "Konfigurera NEXI-betalningsterminaler för att bearbeta kortbetalningar i din kassa."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "NEXI Transaction"
+msgstr "NEXI-transaktion"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Retry"
+msgstr "Försök igen"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Poll Status"
+msgstr "Kontrollera status"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Transaction Details"
+msgstr "Transaktionsdetaljer"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Status Information"
+msgstr "Statusinformation"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "POS Order"
+msgstr "Kassaorder"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Card Details"
+msgstr "Kortdetaljer"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Card Information"
+msgstr "Kortinformation"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Authorization"
+msgstr "Auktorisering"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Receipt Text"
+msgstr "Kvittotext"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Technical"
+msgstr "Tekniskt"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Pending"
+msgstr "Väntande"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Processing"
+msgstr "Bearbetas"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Confirmed"
+msgstr "Bekräftad"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Failed"
+msgstr "Misslyckades"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Today"
+msgstr "Idag"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Terminal"
+msgstr "Terminal"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Card Scheme"
+msgstr "Kortsystem"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Date"
+msgstr "Datum"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+msgid "No NEXI Transactions yet"
+msgstr "Inga NEXI-transaktioner ännu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+msgid "Transactions will appear here when payments are processed through NEXI terminals."
+msgstr "Transaktioner visas här när betalningar bearbetas via NEXI-terminaler."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_payment_method_form
+msgid "NEXI Configuration"
+msgstr "NEXI-konfiguration"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_form
+msgid "NEXI Tx"
+msgstr "NEXI Tx"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_form
+msgid "NEXI Payments"
+msgstr "NEXI-betalningar"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_search
+msgid "With NEXI Payments"
+msgstr "Med NEXI-betalningar"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_search
+msgid "Without NEXI Payments"
+msgstr "Utan NEXI-betalningar"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Terminals"
+msgstr "Terminaler"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Transactions"
+msgstr "Transaktioner"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Reports"
+msgstr "Rapporter"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Settings"
+msgstr "Inställningar"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "NEXI Payment"
+msgstr "NEXI-betalning"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Amount to pay:"
+msgstr "Belopp att betala:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Select Terminal"
+msgstr "Välj terminal"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "No terminal available. Please verify that terminals are powered on and connected."
+msgstr "Ingen terminal tillgänglig. Kontrollera att terminalerna är påslagna och anslutna."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Default"
+msgstr "Standard"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "After starting the payment, the customer must complete the operation on the physical POS terminal."
+msgstr "Efter att betalningen startats måste kunden slutföra operationen på den fysiska kassaterminalen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Start Payment"
+msgstr "Starta betalning"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Complete payment on terminal"
+msgstr "Slutför betalning på terminalen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Amount:"
+msgstr "Belopp:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "elapsed"
+msgstr "förfluten"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Cancel Payment"
+msgstr "Avbryt betalning"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "The customer must insert the card and follow the instructions on the POS terminal."
+msgstr "Kunden måste sätta in kortet och följa instruktionerna på kassaterminalen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Payment Completed!"
+msgstr "Betalning slutförd!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "The payment has been processed successfully."
+msgstr "Betalningen har behandlats framgångsrikt."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Card scheme:"
+msgstr "Kortsystem:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Card:"
+msgstr "Kort:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Reference:"
+msgstr "Referens:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Authorization Code:"
+msgstr "Auktoriseringskod:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Entry mode:"
+msgstr "Inmatningsmetod:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Date:"
+msgstr "Datum:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Continue"
+msgstr "Fortsätt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Print Receipt"
+msgstr "Skriv ut kvitto"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Payment Failed"
+msgstr "Betalning misslyckades"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Technical detail:"
+msgstr "Teknisk detalj:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Troubleshooting:"
+msgstr "Felsökning:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Verify that the terminal is powered on and connected"
+msgstr "Kontrollera att terminalen är påslagen och ansluten"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Verify that the card is valid"
+msgstr "Kontrollera att kortet är giltigt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Retry the payment"
+msgstr "Försök betala igen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Use another payment method if the problem persists"
+msgstr "Använd en annan betalningsmetod om problemet kvarstår"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Back to Payment"
+msgstr "Tillbaka till betalning"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Terminal Status"
+msgstr "Terminalstatus"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Last NEXI Transaction"
+msgstr "Senaste NEXI-transaktion"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "NEXI Terminal Status"
+msgstr "NEXI-terminalstatus"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Total"
+msgstr "Totalt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Actions"
+msgstr "Åtgärder"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Test"
+msgstr "Testa"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Close"
+msgstr "Stäng"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "PAN:"
+msgstr "PAN:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Auth:"
+msgstr "Aut:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Entry:"
+msgstr "Inmatning:"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/xml/nexi_payment_templates.xml:0
+msgid "Ref:"
+msgstr "Ref:"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__transaction_type
+msgid "Transaction Type"
+msgstr "Transaktionstyp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__transaction_type__purchase
+msgid "Purchase"
+msgstr "Köp"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__transaction_type__refund
+msgid "Refund"
+msgstr "Återbetalning"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__original_transaction_id
+msgid "Original Transaction"
+msgstr "Ursprunglig transaktion"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__original_transaction_id
+msgid "The original purchase transaction this refund is for"
+msgstr "Den ursprungliga köptransaktionen som denna återbetalning gäller"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__refund_ids
+msgid "Refunds"
+msgstr "Återbetalningar"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only confirmed transactions can be refunded"
+msgstr "Endast bekräftade transaktioner kan återbetalas"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only successful transactions can be refunded"
+msgstr "Endast lyckade transaktioner kan återbetalas"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only purchase transactions can be refunded"
+msgstr "Endast köptransaktioner kan återbetalas"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot initiate refund: transaction is in \"%s\" state"
+msgstr "Kan inte initiera återbetalning: transaktionen är i tillståndet \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "action_purchase_refund() is only for refund transactions"
+msgstr "action_purchase_refund() är bara för återbetalningstransaktioner"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to initiate refund: %s"
+msgstr "Kunde inte initiera återbetalning: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to get unconfirmed transactions: %s"
+msgstr "Kunde inte hämta obekräftade transaktioner: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Unconfirmed Recovery"
+msgstr "Återställning av obekräftade"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Found %(total)s unconfirmed transactions: %(recovered)s recovered, %(updated)s updated."
+msgstr "Hittade %(total)s obekräftade transaktioner: %(recovered)s återställda, %(updated)s uppdaterade."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Refund"
+msgstr "Återbetalning"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Purchases"
+msgstr "Köp"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Refunds"
+msgstr "Återbetalningar"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Refunds"
+msgstr "Återbetalningar"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Recover Unconfirmed"
+msgstr "Återställ obekräftade"
+
+#. module: pos_nexi_payment
+#: model:ir.cron,name:pos_nexi_payment.cron_recover_unconfirmed
+msgid "NEXI: Recover Unconfirmed Transactions"
+msgstr "NEXI: Återställ obekräftade transaktioner"

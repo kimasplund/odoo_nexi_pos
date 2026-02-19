@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nexi_terminal_user,NEXI Terminal User,model_nexi_terminal,pos_nexi_payment.group_nexi_user,1,0,0,0
+access_nexi_terminal_manager,NEXI Terminal Manager,model_nexi_terminal,pos_nexi_payment.group_nexi_manager,1,1,1,0
+access_nexi_terminal_admin,NEXI Terminal Admin,model_nexi_terminal,pos_nexi_payment.group_nexi_admin,1,1,1,1
+access_nexi_transaction_user,NEXI Transaction User,model_nexi_transaction,pos_nexi_payment.group_nexi_user,1,0,1,0
+access_nexi_transaction_manager,NEXI Transaction Manager,model_nexi_transaction,pos_nexi_payment.group_nexi_manager,1,1,1,0
+access_nexi_transaction_admin,NEXI Transaction Admin,model_nexi_transaction,pos_nexi_payment.group_nexi_admin,1,1,1,1
+access_nexi_audit_log_manager,NEXI Audit Log Manager,model_nexi_audit_log,pos_nexi_payment.group_nexi_manager,1,0,1,0
+access_nexi_audit_log_admin,NEXI Audit Log Admin,model_nexi_audit_log,pos_nexi_payment.group_nexi_admin,1,1,1,1

@@ -1,0 +1,271 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_nexi_light
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 00:00+0000\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Swedish\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_terminal_id
+msgid "Terminal ID"
+msgstr "Terminal-ID"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_api_key
+msgid "API Key"
+msgstr "API-nyckel"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_test_mode
+msgid "Test Mode"
+msgstr "Testläge"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Terminal Status"
+msgstr "Terminalstatus"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_last_heartbeat
+msgid "Last Heartbeat"
+msgstr "Senaste livstecken"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_latest_response
+msgid "Latest Response"
+msgstr "Senaste svar"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,field_description:pos_nexi_light.field_pos_payment_method__nexi_webhook_url
+msgid "Webhook URL"
+msgstr "Webhook-URL"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_terminal_id
+msgid "NEXI terminal identifier (e.g., TERM001). This is the unique identifier for your physical terminal."
+msgstr "NEXI-terminalidentifierare (t.ex. TERM001). Detta är den unika identifieraren för din fysiska terminal."
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_api_key
+msgid "Your NEXI API key for authentication. Keep this secure."
+msgstr "Din NEXI API-nyckel för autentisering. Förvara den säkert."
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_test_mode
+msgid "Run transactions in the test environment. No real charges will be made."
+msgstr "Kör transaktioner i testmiljön. Inga riktiga debiteringar görs."
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Current status of the terminal (updated via polling)"
+msgstr "Aktuell status för terminalen (uppdateras via polling)"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_last_heartbeat
+msgid "Last time the terminal was seen online"
+msgstr "Senaste gången terminalen var online"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_latest_response
+msgid "Buffer for the latest asynchronous response from NEXI"
+msgstr "Buffert för det senaste asynkrona svaret från NEXI"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,help:pos_nexi_light.field_pos_payment_method__nexi_webhook_url
+msgid "URL to configure in NEXI dashboard for receiving notifications"
+msgstr "URL att konfigurera i NEXI-instrumentpanelen för att ta emot notifikationer"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Unknown"
+msgstr "Okänd"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Online"
+msgstr "Online"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Offline"
+msgstr "Offline"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Busy"
+msgstr "Upptagen"
+
+#. module: pos_nexi_light
+#: model:pos.payment.method,selection:pos_nexi_light.field_pos_payment_method__nexi_terminal_status
+msgid "Error"
+msgstr "Fel"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Terminal %(terminal)s is already used on payment method %(method)s."
+msgstr "Terminal %(terminal)s används redan på betalningsmetoden %(method)s."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "API Key is required for NEXI payment method %(method)s."
+msgstr "API-nyckel krävs för NEXI-betalningsmetoden %(method)s."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI API Key is not configured for payment method %s"
+msgstr "NEXI API-nyckel är inte konfigurerad för betalningsmetoden %s"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI API Error (%(status)s): %(message)s"
+msgstr "NEXI API-fel (%(status)s): %(message)s"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection to NEXI timed out. Please try again."
+msgstr "Anslutningen till NEXI fick timeout. Försök igen."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Could not connect to NEXI. Please check your internet connection."
+msgstr "Kunde inte ansluta till NEXI. Kontrollera din internetanslutning."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Error communicating with NEXI: %s"
+msgstr "Fel vid kommunikation med NEXI: %s"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection Successful"
+msgstr "Anslutningen lyckades"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Successfully connected to NEXI terminal."
+msgstr "Anslutningen till NEXI-terminalen lyckades."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/models/pos_payment_method.py:0
+#, python-format
+msgid "Connection Failed"
+msgstr "Anslutningen misslyckades"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Terminal ID is not configured"
+msgstr "NEXI Terminal-ID är inte konfigurerat"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Failed to send payment to terminal: "
+msgstr "Kunde inte skicka betalning till terminalen: "
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Failed to cancel payment: "
+msgstr "Kunde inte avbryta betalning: "
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment confirmed on terminal but failed to finalize: "
+msgstr "Betalningen bekräftades på terminalen men kunde inte slutföras: "
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment failed"
+msgstr "Betalningen misslyckades"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Payment timeout - no response from terminal"
+msgstr "Timeout för betalning - inget svar från terminalen"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Payment"
+msgstr "NEXI-betalning"
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "Please complete the payment on the terminal..."
+msgstr "Slutför betalningen på terminalen..."
+
+#. module: pos_nexi_light
+#: code:addons/pos_nexi_light/static/src/js/payment_nexi.js:0
+#, python-format
+msgid "NEXI Error"
+msgstr "NEXI-fel"
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_form_nexi
+msgid "NEXI Terminal Status"
+msgstr "NEXI-terminalstatus"
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_form_nexi
+msgid "Test Connection"
+msgstr "Testa anslutning"
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.view_pos_payment_method_search_nexi
+msgid "NEXI"
+msgstr "NEXI"
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "NEXI Payment"
+msgstr "NEXI-betalning"
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Card: "
+msgstr "Kort: "
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "PAN: "
+msgstr "PAN: "
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Auth: "
+msgstr "Auth: "
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Entry: "
+msgstr "Inmatning: "
+
+#. module: pos_nexi_light
+#: model_terms:ir.ui.view,arch_db:pos_nexi_light.pos_nexi_NexiReceiptInfo
+msgid "Ref: "
+msgstr "Ref: "

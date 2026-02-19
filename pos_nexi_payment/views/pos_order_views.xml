@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Action to open NEXI transactions from POS Order - Define BEFORE view that uses it -->
+    <record id="action_nexi_transaction_from_order" model="ir.actions.act_window">
+        <field name="name">NEXI Transactions</field>
+        <field name="res_model">nexi.transaction</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('pos_order_id', '=', active_id)]</field>
+        <field name="context">{'default_pos_order_id': active_id}</field>
+    </record>
+
+    <!-- Inherit POS Order Form to add NEXI transaction smart button -->
+    <record id="view_pos_order_form_nexi" model="ir.ui.view">
+        <field name="name">pos.order.form.nexi</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <!-- Add NEXI Transactions smart button -->
+            <div name="button_box" position="inside">
+                <button name="%(action_nexi_transaction_from_order)d" 
+                        type="action" 
+                        class="oe_stat_button" 
+                        icon="fa-credit-card"
+                        invisible="nexi_payment_count == 0">
+                    <field name="nexi_payment_count" widget="statinfo" string="NEXI Tx"/>
+                </button>
+            </div>
+            
+            <!-- Add NEXI payment indicator in the payments tab -->
+            <xpath expr="//field[@name='payment_ids']/list/field[@name='payment_method_id']" position="after">
+                <field name="nexi_transaction_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit POS Order List to add NEXI transaction count -->
+    <record id="view_pos_order_list_nexi" model="ir.ui.view">
+        <field name="name">pos.order.list.nexi</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="nexi_payment_count" optional="show" string="NEXI Payments"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Inherit POS Order Search to add NEXI filter -->
+    <record id="view_pos_order_search_nexi" model="ir.ui.view">
+        <field name="name">pos.order.search.nexi</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <filter name="invoiced" position="after">
+                <separator/>
+                <filter string="With NEXI Payments" name="with_nexi" domain="[('nexi_payment_count', '>', 0)]"/>
+                <filter string="Without NEXI Payments" name="without_nexi" domain="[('nexi_payment_count', '=', 0)]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

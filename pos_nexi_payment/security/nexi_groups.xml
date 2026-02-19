@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- NEXI Payment Module Category -->
+        <record id="module_category_nexi_payment" model="ir.module.category">
+            <field name="name">NEXI Payment</field>
+            <field name="description">Access rights for NEXI payment terminal integration</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- NEXI User: Can process payments. Cannot configure terminals or refund. -->
+        <record id="group_nexi_user" model="res.groups">
+            <field name="name">NEXI User</field>
+            <field name="category_id" ref="module_category_nexi_payment"/>
+            <field name="implied_ids" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+            <field name="comment">Can process payments using NEXI terminals. Cannot configure terminals or process refunds.</field>
+        </record>
+
+        <!-- NEXI Manager: Can configure terminals and process refunds. -->
+        <record id="group_nexi_manager" model="res.groups">
+            <field name="name">NEXI Manager</field>
+            <field name="category_id" ref="module_category_nexi_payment"/>
+            <field name="implied_ids" eval="[
+                (4, ref('group_nexi_user')),
+                (4, ref('point_of_sale.group_pos_manager'))
+            ]"/>
+            <field name="comment">Can configure NEXI terminals and process refunds. Cannot manage API keys.</field>
+        </record>
+
+        <!-- NEXI Administrator: Full access including API keys. -->
+        <record id="group_nexi_admin" model="res.groups">
+            <field name="name">NEXI Administrator</field>
+            <field name="category_id" ref="module_category_nexi_payment"/>
+            <field name="implied_ids" eval="[
+                (4, ref('group_nexi_manager'))
+            ]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+            <field name="comment">Full access to NEXI payment configuration including API key management.</field>
+        </record>
+    </data>
+</odoo>

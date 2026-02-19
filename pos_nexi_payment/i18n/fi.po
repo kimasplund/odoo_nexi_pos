@@ -1,0 +1,2109 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * pos_nexi_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 00:00+0000\n"
+"PO-Revision-Date: 2026-02-18 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_terminal
+msgid "NEXI Payment Terminal"
+msgstr "NEXI-maksupääte"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_transaction
+msgid "NEXI Payment Transaction"
+msgstr "NEXI-maksutapahtuma"
+
+#. module: pos_nexi_payment
+#: model:ir.model,name:pos_nexi_payment.model_nexi_security_mixin
+msgid "NEXI Security Mixin"
+msgstr "NEXI-turvallisuusmixin"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__name
+msgid "Terminal Name"
+msgstr "Päätteen nimi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__terminal_id
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__terminal_id
+msgid "Terminal ID"
+msgstr "Pääte-ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__api_key
+msgid "API Key"
+msgstr "API-avain"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__webhook_secret
+msgid "Webhook Secret"
+msgstr "Webhook-salaisuus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__min_amount
+msgid "Minimum Amount"
+msgstr "Vähimmäissumma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__max_amount
+msgid "Maximum Amount"
+msgstr "Enimmäissumma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__currency_id
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__currency_id
+msgid "Currency"
+msgstr "Valuutta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__company_id
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Company"
+msgstr "Yritys"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__pos_config_ids
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "POS Configurations"
+msgstr "Kassajärjestelmän asetukset"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__state
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__state
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "State"
+msgstr "Tila"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__last_heartbeat
+msgid "Last Heartbeat"
+msgstr "Viimeisin yhteystarkistus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__transaction_count
+msgid "Transaction Count"
+msgstr "Tapahtumien määrä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__success_rate
+msgid "Success Rate (%)"
+msgstr "Onnistumisprosentti (%)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__active
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__active
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Active"
+msgstr "Aktiivinen"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_terminal__notes
+msgid "Notes"
+msgstr "Muistiinpanot"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__external_id
+msgid "External ID"
+msgstr "Ulkoinen tunnus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__amount
+msgid "Amount"
+msgstr "Summa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__result_code
+msgid "Result Code"
+msgstr "Tuloskoodi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__result_message
+msgid "Result Message"
+msgstr "Tulosviesti"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__pos_order_id
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "POS Order"
+msgstr "Kassatilaus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__payment_method_id
+msgid "Payment Method"
+msgstr "Maksutapa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__terminal_ref
+msgid "Terminal Reference"
+msgstr "Päätteen viite"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__confirm_attempts
+msgid "Confirm Attempts"
+msgstr "Vahvistusyritykset"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__purchase_request_time
+msgid "Purchase Request Time"
+msgstr "Ostopyynnön aika"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__confirm_request_time
+msgid "Confirm Request Time"
+msgstr "Vahvistuspyynnön aika"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__notification_received
+msgid "Notification Received"
+msgstr "Ilmoitus vastaanotettu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__notification_data
+msgid "Notification Data"
+msgstr "Ilmoitustiedot"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__webhook_verified
+msgid "Webhook Verified"
+msgstr "Webhook vahvistettu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__webhook_timestamp
+msgid "Webhook Timestamp"
+msgstr "Webhook-aikaleima"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__error_count
+msgid "Error Count"
+msgstr "Virheiden määrä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__last_error
+msgid "Last Error"
+msgstr "Viimeisin virhe"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__nexi_reference
+msgid "NEXI Reference"
+msgstr "NEXI-viite"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_scheme
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Card Scheme"
+msgstr "Korttijärjestelmä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorization_code
+msgid "Authorization Code"
+msgstr "Valtuutuskoodi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorization_response_code
+msgid "Authorization Response Code"
+msgstr "Valtuutusvastauskoodi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_entry_mode
+msgid "Card Entry Mode"
+msgstr "Kortin syöttötapa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_number_customer
+msgid "Card Number (Customer)"
+msgstr "Korttinumero (asiakas)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__card_number_merchant
+msgid "Card Number (Merchant)"
+msgstr "Korttinumero (kauppias)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__cardholder_verification
+msgid "Cardholder Verification"
+msgstr "Kortinhaltijan tunnistus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__application_name
+msgid "Application Name"
+msgstr "Sovelluksen nimi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__application_identifier
+msgid "Application Identifier"
+msgstr "Sovelluksen tunniste"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_reference
+msgid "Acquirer Reference"
+msgstr "Vastaanottajan viite"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_terminal_id
+msgid "Acquirer Terminal ID"
+msgstr "Vastaanottajan pääte-ID"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__acquirer_timestamp
+msgid "Acquirer Timestamp"
+msgstr "Vastaanottajan aikaleima"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__authorized_amount
+msgid "Authorized Amount"
+msgstr "Valtuutettu summa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__captured_amount
+msgid "Captured Amount"
+msgstr "Veloitettu summa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__receipt_customer
+msgid "Receipt (Customer)"
+msgstr "Kuitti (asiakas)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__receipt_merchant
+msgid "Receipt (Merchant)"
+msgstr "Kuitti (kauppias)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment_method__is_nexi_payment
+msgid "NEXI Payment Terminal"
+msgstr "NEXI-maksupääte"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment_method__nexi_terminal_id
+msgid "NEXI Terminal"
+msgstr "NEXI-pääte"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__nexi_terminal_ids
+msgid "NEXI Terminals"
+msgstr "NEXI-päätteet"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__has_nexi_terminal
+msgid "Has NEXI Terminal"
+msgstr "NEXI-pääte käytössä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_session__nexi_active_transactions
+msgid "Active NEXI Transactions"
+msgstr "Aktiiviset NEXI-tapahtumat"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__nexi_transaction_ids
+msgid "NEXI Transactions"
+msgstr "NEXI-tapahtumat"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__nexi_payment_count
+msgid "NEXI Payment Count"
+msgstr "NEXI-maksujen määrä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_order__has_pending_nexi
+msgid "Has Pending NEXI Payments"
+msgstr "Odottavia NEXI-maksuja"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__nexi_transaction_id
+msgid "NEXI Transaction"
+msgstr "NEXI-tapahtuma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__nexi_external_id
+msgid "NEXI External ID"
+msgstr "NEXI-ulkoinen tunnus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_pos_payment__is_nexi_payment
+msgid "Is NEXI Payment"
+msgstr "On NEXI-maksu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__inactive
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Inactive"
+msgstr "Ei aktiivinen"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_terminal__state__error
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Error"
+msgstr "Virhe"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__pending
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Pending"
+msgstr "Odottaa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__processing
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Processing"
+msgstr "Käsittelyssä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__awaiting_confirm
+msgid "Awaiting Confirmation"
+msgstr "Odottaa vahvistusta"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Awaiting confirmation"
+msgstr "Odottaa vahvistusta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__confirmed
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Confirmed"
+msgstr "Vahvistettu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__failed
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Failed"
+msgstr "Epäonnistunut"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__state__cancelled
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Cancelled"
+msgstr "Peruutettu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__name
+msgid "Human-readable name for this terminal"
+msgstr "Tämän päätteen luettava nimi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__terminal_id
+msgid "Unique terminal identifier provided by NEXI (max 32 chars)"
+msgstr "NEXI:n tarjoama yksilöllinen päätteen tunniste (enintään 32 merkkiä)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__api_key
+msgid "Encrypted API key for terminal authentication. Only system administrators can view this."
+msgstr "Salattu API-avain päätteen todentamiseen. Vain järjestelmänvalvojat voivat nähdä tämän."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__webhook_secret
+msgid "Secret key for verifying webhook signatures (HMAC-SHA256)"
+msgstr "Salainen avain webhook-allekirjoitusten todentamiseen (HMAC-SHA256)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__min_amount
+msgid "Minimum transaction amount allowed"
+msgstr "Sallittu tapahtuman vähimmäissumma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__max_amount
+msgid "Maximum transaction amount allowed"
+msgstr "Sallittu tapahtuman enimmäissumma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__currency_id
+msgid "Default currency for this terminal"
+msgstr "Tämän päätteen oletusvaluutta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__company_id
+msgid "Company this terminal belongs to"
+msgstr "Yritys, johon tämä pääte kuuluu"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__pos_config_ids
+msgid "Point of Sale configurations that can use this terminal"
+msgstr "Kassajärjestelmän asetukset, jotka voivat käyttää tätä päätettä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__state
+msgid "Current operational state of the terminal"
+msgstr "Päätteen nykyinen toimintatila"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__last_heartbeat
+msgid "Timestamp of last successful communication with terminal"
+msgstr "Viimeisimmän onnistuneen yhteydenpidon aikaleima päätteen kanssa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__transaction_count
+msgid "Number of transactions processed by this terminal"
+msgstr "Tämän päätteen käsittelemien tapahtumien määrä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__success_rate
+msgid "Percentage of successful transactions"
+msgstr "Onnistuneiden tapahtumien prosenttiosuus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__active
+msgid "Whether this terminal is active and can be used"
+msgstr "Onko tämä pääte aktiivinen ja käytettävissä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_terminal__notes
+msgid "Additional notes about this terminal"
+msgstr "Lisätietoja tästä päätteestä"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__external_id
+msgid "Unique transaction identifier (UUID)"
+msgstr "Yksilöllinen tapahtuman tunniste (UUID)"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__terminal_id
+msgid "NEXI terminal identifier"
+msgstr "NEXI-päätteen tunniste"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__amount
+msgid "Transaction amount"
+msgstr "Tapahtuman summa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__currency_id
+msgid "Transaction currency"
+msgstr "Tapahtuman valuutta"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__state
+msgid "Current transaction state"
+msgstr "Tapahtuman nykyinen tila"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__result_code
+msgid "Result code from NEXI API"
+msgstr "NEXI API:n tuloskoodi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__result_message
+msgid "Human-readable result message"
+msgstr "Luettava tulosviesti"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__pos_order_id
+msgid "Associated Point of Sale order"
+msgstr "Liittyvä kassatilaus"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__payment_method_id
+msgid "POS payment method used"
+msgstr "Käytetty kassamaksutapa"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__terminal_ref
+msgid "Reference to terminal configuration"
+msgstr "Viittaus päätteen asetuksiin"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment_method__is_nexi_payment
+msgid "Enable this to use a NEXI payment terminal for this payment method."
+msgstr "Ota käyttöön NEXI-maksupääte tätä maksutapaa varten."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment_method__nexi_terminal_id
+msgid "The NEXI terminal associated with this payment method."
+msgstr "Tähän maksutapaan liitetty NEXI-pääte."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_session__nexi_terminal_ids
+msgid "NEXI terminals available in this session."
+msgstr "Tässä istunnossa käytettävissä olevat NEXI-päätteet."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_order__nexi_transaction_ids
+msgid "All NEXI transactions associated with this order."
+msgstr "Kaikki tähän tilaukseen liittyvät NEXI-tapahtumat."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment__nexi_transaction_id
+msgid "The linked NEXI transaction for this payment."
+msgstr "Tähän maksuun liitetty NEXI-tapahtuma."
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_pos_payment__nexi_external_id
+msgid "External reference from NEXI for this transaction."
+msgstr "NEXI:n ulkoinen viite tälle tapahtumalle."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_user
+msgid "Can process payments using NEXI terminals. Cannot configure terminals or process refunds."
+msgstr "Voi käsitellä maksuja NEXI-päätteillä. Ei voi määrittää päätteitä tai käsitellä palautuksia."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_manager
+msgid "Can configure NEXI terminals and process refunds. Cannot manage API keys."
+msgstr "Voi määrittää NEXI-päätteitä ja käsitellä palautuksia. Ei voi hallita API-avaimia."
+
+#. module: pos_nexi_payment
+#: model:res.groups,comment:pos_nexi_payment.group_nexi_admin
+msgid "Full access to NEXI payment configuration including API key management."
+msgstr "Täysi pääsy NEXI-maksuasetuksiin mukaan lukien API-avainten hallinta."
+
+#. module: pos_nexi_payment
+#: model:ir.module.category,name:pos_nexi_payment.module_category_nexi_payment
+msgid "NEXI Payment"
+msgstr "NEXI-maksu"
+
+#. module: pos_nexi_payment
+#: model:ir.module.category,description:pos_nexi_payment.module_category_nexi_payment
+msgid "Access rights for NEXI payment terminal integration"
+msgstr "Käyttöoikeudet NEXI-maksupääteintegraatioon"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_user
+msgid "NEXI User"
+msgstr "NEXI-käyttäjä"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_manager
+msgid "NEXI Manager"
+msgstr "NEXI-päällikkö"
+
+#. module: pos_nexi_payment
+#: model:res.groups,name:pos_nexi_payment.group_nexi_admin
+msgid "NEXI Administrator"
+msgstr "NEXI-järjestelmänvalvoja"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_user
+msgid "NEXI: User"
+msgstr "NEXI: Käyttäjä"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_manager
+msgid "NEXI: Manager"
+msgstr "NEXI: Päällikkö"
+
+#. module: pos_nexi_payment
+#: model:res.groups,full_name:pos_nexi_payment.group_nexi_admin
+msgid "NEXI: Administrator"
+msgstr "NEXI: Järjestelmänvalvoja"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_multi_company
+msgid "NEXI Transaction: Multi-Company"
+msgstr "NEXI-tapahtuma: Moniyritys"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_terminal_multi_company
+msgid "NEXI Terminal: Multi-Company"
+msgstr "NEXI-pääte: Moniyritys"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_admin
+msgid "NEXI Transaction: Admin Access"
+msgstr "NEXI-tapahtuma: Järjestelmänvalvojan pääsy"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_terminal_admin
+msgid "NEXI Terminal: Admin Access"
+msgstr "NEXI-pääte: Järjestelmänvalvojan pääsy"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_user
+msgid "NEXI Transaction: User Can See Own Transactions"
+msgstr "NEXI-tapahtuma: Käyttäjä näkee omat tapahtumansa"
+
+#. module: pos_nexi_payment
+#: model:ir.rule,name:pos_nexi_payment.rule_nexi_transaction_manager
+msgid "NEXI Transaction: Manager Can See All Transactions"
+msgstr "NEXI-tapahtuma: Päällikkö näkee kaikki tapahtumat"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_terminal
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "NEXI Terminal"
+msgstr "NEXI-pääte"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_transaction
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "NEXI Transaction"
+msgstr "NEXI-tapahtuma"
+
+#. module: pos_nexi_payment
+#: model:ir.sequence,name:pos_nexi_payment.seq_nexi_session
+msgid "NEXI Session"
+msgstr "NEXI-istunto"
+
+#. module: pos_nexi_payment
+#: model:nexi.terminal,constraint:pos_nexi_payment.unique_terminal_id
+msgid "Terminal ID must be unique!"
+msgstr "Pääte-ID:n on oltava yksilöllinen!"
+
+#. module: pos_nexi_payment
+#: model:nexi.transaction,constraint:pos_nexi_payment.unique_external_id
+msgid "External ID must be unique!"
+msgstr "Ulkoisen tunnuksen on oltava yksilöllinen!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to encrypt API key"
+msgstr "API-avaimen salaus epäonnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Encryption key not available"
+msgstr "Salausavain ei ole saatavilla"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to decrypt API key"
+msgstr "API-avaimen salauksen purku epäonnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID is required"
+msgstr "Pääte-ID on pakollinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID must not exceed 32 characters"
+msgstr "Pääte-ID saa olla enintään 32 merkkiä"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal ID must contain only letters, numbers, hyphens, and underscores"
+msgstr "Pääte-ID saa sisältää vain kirjaimia, numeroita, tavuviivoja ja alaviivoja"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key is required"
+msgstr "API-avain on pakollinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key appears to be invalid (too short)"
+msgstr "API-avain vaikuttaa virheelliseltä (liian lyhyt)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Minimum amount must be positive"
+msgstr "Vähimmäissumman on oltava positiivinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Maximum amount must be positive"
+msgstr "Enimmäissumman on oltava positiivinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Minimum amount must be less than maximum amount"
+msgstr "Vähimmäissumman on oltava pienempi kuin enimmäissumma"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "POS Configuration \"%s\" must belong to the same company as the terminal"
+msgstr "Kassajärjestelmän asetuksen \"%s\" on kuuluttava samaan yritykseen kuin pääte"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Cannot activate terminal without API key"
+msgstr "Päätettä ei voi aktivoida ilman API-avainta"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal Activated"
+msgstr "Pääte aktivoitu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is now active"
+msgstr "Pääte \"%s\" on nyt aktiivinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal Deactivated"
+msgstr "Pääte deaktivoitu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is now inactive"
+msgstr "Pääte \"%s\" on nyt ei-aktiivinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Connection Successful"
+msgstr "Yhteys onnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is connected and ready"
+msgstr "Pääte \"%s\" on yhdistetty ja valmis"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Connection test failed for terminal \"%s\":\n%s"
+msgstr "Yhteystesti epäonnistui päätteelle \"%s\":\n%s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.action_nexi_transaction
+msgid "NEXI Transactions"
+msgstr "NEXI-tapahtumat"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "API Key Migration"
+msgstr "API-avaimen migraatio"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Migrated %s terminal API keys to encrypted storage"
+msgstr "Siirretty %s päätteen API-avainta salattuun tallennustilaan"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Terminal \"%s\" is not active (current state: %s)"
+msgstr "Pääte \"%s\" ei ole aktiivinen (nykyinen tila: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Cannot delete terminal \"%s\" because it has associated transactions. Archive it instead."
+msgstr "Päätettä \"%s\" ei voi poistaa, koska sillä on liittyviä tapahtumia. Arkistoi se sen sijaan."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction amount must be positive"
+msgstr "Tapahtuman summan on oltava positiivinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction amount exceeds maximum"
+msgstr "Tapahtuman summa ylittää enimmäismäärän"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID is required"
+msgstr "Ulkoinen tunnus on pakollinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID exceeds maximum length"
+msgstr "Ulkoinen tunnus ylittää enimmäispituuden"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "External ID must contain only alphanumeric characters, hyphens, and underscores"
+msgstr "Ulkoinen tunnus saa sisältää vain aakkosnumeerisia merkkejä, tavuviivoja ja alaviivoja"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot initiate purchase: transaction is in \"%s\" state"
+msgstr "Ostoa ei voi aloittaa: tapahtuma on tilassa \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction is being processed by another worker. Please wait and try again."
+msgstr "Tapahtumaa käsittelee toinen prosessi. Odota ja yritä uudelleen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "A transaction with external_id \"%s\" is already in progress"
+msgstr "Tapahtuma ulkoisella tunnuksella \"%s\" on jo käynnissä"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" not found. Please configure the terminal first."
+msgstr "Päätettä \"%s\" ei löytynyt. Määritä pääte ensin."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" is not active (state: %s)"
+msgstr "Pääte \"%s\" ei ole aktiivinen (tila: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to initiate purchase: %s"
+msgstr "Oston aloitus epäonnistui: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot confirm: transaction is in \"%s\" state"
+msgstr "Vahvistus ei onnistu: tapahtuma on tilassa \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Transaction is being confirmed by another worker"
+msgstr "Tapahtumaa vahvistaa toinen prosessi"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal not found"
+msgstr "Päätettä ei löytynyt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to confirm transaction: %s"
+msgstr "Tapahtuman vahvistus epäonnistui: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot cancel transaction in \"%s\" state"
+msgstr "Tapahtumaa ei voi peruuttaa tilassa \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only confirmed transactions can be voided (current state: \"%s\")"
+msgstr "Vain vahvistetut tapahtumat voidaan mitätöidä (nykyinen tila: \"%s\")"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Terminal \"%s\" not found"
+msgstr "Päätettä \"%s\" ei löytynyt"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only failed transactions can be retried"
+msgstr "Vain epäonnistuneita tapahtumia voidaan yrittää uudelleen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/security/nexi_security.py:0
+#, python-format
+msgid "Too many attempts. Please try again later."
+msgstr "Liian monta yritystä. Yritä myöhemmin uudelleen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/security/nexi_security.py:0
+#, python-format
+msgid "You do not have permission to perform this action: %s"
+msgstr "Sinulla ei ole oikeutta suorittaa tätä toimintoa: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "A NEXI terminal must be selected when \"NEXI Payment Terminal\" is enabled."
+msgstr "NEXI-pääte on valittava, kun \"NEXI-maksupääte\" on käytössä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Cannot use both NEXI payment terminal and another payment terminal for the same payment method. Please choose one."
+msgstr "Samalle maksutavalle ei voi käyttää sekä NEXI-maksupäätettä että toista maksupäätettä. Valitse yksi."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount must be at least %.2f"
+msgstr "Maksun summan on oltava vähintään %.2f"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount exceeds maximum allowed (%.2f)"
+msgstr "Maksun summa ylittää sallitun enimmäismäärän (%.2f)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Amount %.2f is below the terminal minimum (%.2f)."
+msgstr "Summa %.2f on alle päätteen vähimmäismäärän (%.2f)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Amount %.2f exceeds the terminal maximum (%.2f)."
+msgstr "Summa %.2f ylittää päätteen enimmäismäärän (%.2f)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment amount does not match order balance. Expected: %.2f, Received: %.2f"
+msgstr "Maksun summa ei vastaa tilauksen saldoa. Odotettu: %.2f, Vastaanotettu: %.2f"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "You do not have permission to process NEXI payments."
+msgstr "Sinulla ei ole oikeutta käsitellä NEXI-maksuja."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "No remaining balance to pay for this order."
+msgstr "Tässä tilauksessa ei ole jäljellä maksettavaa saldoa."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "NEXI terminal is not available. Please check the configuration."
+msgstr "NEXI-pääte ei ole saatavilla. Tarkista asetukset."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Too many payment attempts. Please wait a moment."
+msgstr "Liian monta maksuyritystä. Odota hetki."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment initiated on terminal. Waiting for customer..."
+msgstr "Maksu aloitettu päätteellä. Odotetaan asiakasta..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Error initiating payment: %s"
+msgstr "Virhe maksun aloituksessa: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Permission denied."
+msgstr "Pääsy estetty."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Invalid external ID format."
+msgstr "Virheellinen ulkoisen tunnuksen muoto."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "No active payment to cancel."
+msgstr "Ei aktiivista maksua peruutettavaksi."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment cancelled successfully."
+msgstr "Maksu peruutettu onnistuneesti."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Cancelled by user due to error: %s"
+msgstr "Käyttäjä peruutti virheen vuoksi: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment marked as cancelled."
+msgstr "Maksu merkitty peruutetuksi."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Transaction not found."
+msgstr "Tapahtumaa ei löytynyt."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Waiting for terminal response..."
+msgstr "Odotetaan päätteen vastausta..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Processing on terminal..."
+msgstr "Käsitellään päätteellä..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Awaiting confirmation..."
+msgstr "Odotetaan vahvistusta..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment confirmed!"
+msgstr "Maksu vahvistettu!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment failed: %s"
+msgstr "Maksu epäonnistui: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Unknown error"
+msgstr "Tuntematon virhe"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Payment was cancelled."
+msgstr "Maksu peruutettiin."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment_method.py:0
+#, python-format
+msgid "Unknown status."
+msgstr "Tuntematon tila."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal ready."
+msgstr "Pääte valmis."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal activated."
+msgstr "Pääte aktivoitu."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal is not active (state: %s)"
+msgstr "Pääte ei ole aktiivinen (tila: %s)"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Error: %s"
+msgstr "Virhe: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Session closed while pending: %s"
+msgstr "Istunto suljettu odottaessa: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Terminal closed successfully."
+msgstr "Pääte suljettu onnistuneesti."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_session.py:0
+#, python-format
+msgid "Cannot close session. There are %s pending NEXI transactions. Please complete or cancel all terminal transactions before closing."
+msgstr "Istuntoa ei voi sulkea. Odottavia NEXI-tapahtumia on %s. Suorita tai peruuta kaikki päätetapahtumat ennen sulkemista."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot add payment to a completed order."
+msgstr "Maksua ei voi lisätä valmiiseen tilaukseen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Payment amount must be greater than zero."
+msgstr "Maksun summan on oltava suurempi kuin nolla."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No NEXI payment method available."
+msgstr "NEXI-maksutapaa ei ole saatavilla."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "NEXI terminal is currently offline."
+msgstr "NEXI-pääte on tällä hetkellä offline."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Error adding payment: %s"
+msgstr "Virhe maksun lisäämisessä: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No NEXI payments to validate."
+msgstr "Ei NEXI-maksuja vahvistettavaksi."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Some NEXI payments are still pending terminal approval."
+msgstr "Jotkin NEXI-maksut odottavat vielä päätteen hyväksyntää."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Some NEXI payments failed: %s"
+msgstr "Jotkin NEXI-maksut epäonnistuivat: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "All NEXI payments validated successfully."
+msgstr "Kaikki NEXI-maksut vahvistettu onnistuneesti."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot mark order as paid. Some NEXI payments are still pending terminal approval. Please wait for the terminal to complete the transaction or cancel the payment."
+msgstr "Tilausta ei voi merkitä maksetuksi. Jotkin NEXI-maksut odottavat vielä päätteen hyväksyntää. Odota päätteen tapahtuman valmistumista tai peruuta maksu."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot mark order as paid. The following NEXI payments failed:\n%s\n\nPlease remove the failed payments and try again, or retry the payment."
+msgstr "Tilausta ei voi merkitä maksetuksi. Seuraavat NEXI-maksut epäonnistuivat:\n%s\n\nPoista epäonnistuneet maksut ja yritä uudelleen, tai yritä maksua uudelleen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Transaction %s"
+msgstr "Tapahtuma %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cannot create invoice while NEXI payments are pending. Please wait for all terminal transactions to complete."
+msgstr "Laskua ei voi luoda, kun NEXI-maksut ovat odottavia. Odota kaikkien päätetapahtumien valmistumista."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "No pending NEXI payments to cancel."
+msgstr "Ei odottavia NEXI-maksuja peruutettavaksi."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cancelled due to error: %s"
+msgstr "Peruutettu virheen vuoksi: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Cancelled %s transaction(s). Errors: %s"
+msgstr "Peruutettu %s tapahtuma(a). Virheet: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_order.py:0
+#, python-format
+msgid "Successfully cancelled %s NEXI payment(s)."
+msgstr "Peruutettu onnistuneesti %s NEXI-maksu(a)."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "This is not a NEXI payment."
+msgstr "Tämä ei ole NEXI-maksu."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Error retrying payment: %s"
+msgstr "Virhe maksun uudelleenyrityksessä: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "No NEXI transaction linked to this payment."
+msgstr "Tähän maksuun ei ole liitetty NEXI-tapahtumaa."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Only confirmed transactions can be voided."
+msgstr "Vain vahvistetut tapahtumat voidaan mitätöidä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Payment voided successfully."
+msgstr "Maksu mitätöity onnistuneesti."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/pos_payment.py:0
+#, python-format
+msgid "Error voiding payment: %s"
+msgstr "Virhe maksun mitätöinnissä: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Chip"
+msgstr "Siru"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Contactless"
+msgstr "Lähimaksu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Magnetic stripe"
+msgstr "Magneettiraita"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Manual"
+msgstr "Manuaalinen"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Fallback"
+msgstr "Varatoiminto"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Unknown Terminal"
+msgstr "Tuntematon pääte"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.action_nexi_terminal
+msgid "NEXI Terminals"
+msgstr "NEXI-päätteet"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+msgid "Online"
+msgstr "Online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+msgid "Offline"
+msgstr "Offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Busy"
+msgstr "Varattu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_models.js:0
+#, python-format
+msgid "Unknown"
+msgstr "Tuntematon"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No Terminal Available"
+msgstr "Ei päätettä saatavilla"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No NEXI terminal is currently available. Please verify that terminals are powered on and connected."
+msgstr "NEXI-päätettä ei ole saatavilla. Varmista, että päätteet ovat päällä ja yhdistettynä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "OK"
+msgstr "OK"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "No active order"
+msgstr "Ei aktiivista tilausta"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Error initializing payment"
+msgstr "Virhe maksun alustuksessa"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "NEXI payment completed successfully!"
+msgstr "NEXI-maksu suoritettu onnistuneesti!"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment failed"
+msgstr "Maksu epäonnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "The terminal is offline. Please verify it is powered on and connected."
+msgstr "Pääte on offline. Varmista, että se on päällä ja yhdistettynä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "The terminal is busy with another transaction. Please wait and try again."
+msgstr "Pääte on varattu toiselle tapahtumalle. Odota ja yritä uudelleen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment declined by the issuing bank."
+msgstr "Maksu hylätty myöntävän pankin toimesta."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment timeout. The customer did not complete the operation on the terminal."
+msgstr "Maksun aikakatkaisu. Asiakas ei suorittanut toimintoa päätteellä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Connection error. Please check the network connection."
+msgstr "Yhteysvirhe. Tarkista verkkoyhteys."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Invalid amount. Please verify the order amount."
+msgstr "Virheellinen summa. Tarkista tilauksen summa."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Transaction not found. Please contact technical support."
+msgstr "Tapahtumaa ei löytynyt. Ota yhteyttä tekniseen tukeen."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "An error occurred during payment. Please try again or use another payment method."
+msgstr "Maksun aikana tapahtui virhe. Yritä uudelleen tai käytä toista maksutapaa."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#, python-format
+msgid "Payment timeout. The terminal operation took too long."
+msgstr "Maksun aikakatkaisu. Päätteen toiminto kesti liian kauan."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_button.js:0
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_payment_method_form
+msgid "NEXI"
+msgstr "NEXI"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "The order has already been paid"
+msgstr "Tilaus on jo maksettu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "No NEXI terminal available. Please verify that terminals are powered on."
+msgstr "NEXI-päätettä ei ole saatavilla. Varmista, että päätteet ovat päällä."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Waiting for terminal response..."
+msgstr "Odotetaan päätteen vastausta..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Processing payment on terminal..."
+msgstr "Käsitellään maksua päätteellä..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Payment authorized, confirming..."
+msgstr "Maksu valtuutettu, vahvistetaan..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_payment_screen.js:0
+#, python-format
+msgid "Processing payment..."
+msgstr "Käsitellään maksua..."
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "No terminal configured"
+msgstr "Ei päätettä määritetty"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Offline"
+msgstr "NEXI Offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are offline"
+msgstr "Kaikki päätteet ovat offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Busy"
+msgstr "NEXI Varattu"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are busy"
+msgstr "Kaikki päätteet ovat varattuja"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Partial"
+msgstr "NEXI Osittain"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Some terminals are offline"
+msgstr "Jotkut päätteet ovat offline"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "NEXI Online"
+msgstr "NEXI Online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "All terminals are online"
+msgstr "Kaikki päätteet ovat online"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal status updated"
+msgstr "Päätteen tila päivitetty"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal connection successful"
+msgstr "Päätteen yhteys onnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Terminal connection failed"
+msgstr "Päätteen yhteys epäonnistui"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "Error during connection test"
+msgstr "Virhe yhteystestissä"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "No terminal available"
+msgstr "Ei päätettä saatavilla"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/static/src/js/nexi_terminal_status.js:0
+#, python-format
+msgid "%s terminals available"
+msgstr "%s päätettä saatavilla"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Test Connection"
+msgstr "Testaa yhteys"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Activate"
+msgstr "Aktivoi"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Deactivate"
+msgstr "Deaktivoi"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Terminal Information"
+msgstr "Päätteen tiedot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Configuration"
+msgstr "Asetukset"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Status"
+msgstr "Tila"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_search
+msgid "Group By"
+msgstr "Ryhmittele"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+msgid "Create your first NEXI Terminal"
+msgstr "Luo ensimmäinen NEXI-pääte"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_list
+msgid "Configure NEXI payment terminals to process card payments in your Point of Sale."
+msgstr "Määritä NEXI-maksupäätteet korttimaksujen käsittelyyn kassajärjestelmässäsi."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Retry"
+msgstr "Yritä uudelleen"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Poll Status"
+msgstr "Tarkista tila"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Transaction Details"
+msgstr "Tapahtuman tiedot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Status Information"
+msgstr "Tilatiedot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Card Details"
+msgstr "Kortin tiedot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Card Information"
+msgstr "Korttitiedot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Authorization"
+msgstr "Valtuutus"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Receipt Text"
+msgstr "Kuittiteksti"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Technical"
+msgstr "Tekninen"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Today"
+msgstr "Tänään"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Terminal"
+msgstr "Pääte"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Date"
+msgstr "Päivämäärä"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+msgid "No NEXI Transactions yet"
+msgstr "Ei vielä NEXI-tapahtumia"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_list
+msgid "Transactions will appear here when payments are processed through NEXI terminals."
+msgstr "Tapahtumat näkyvät täällä, kun maksuja käsitellään NEXI-päätteiden kautta."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_payment_method_form
+msgid "NEXI Configuration"
+msgstr "NEXI-asetukset"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_form
+msgid "NEXI Tx"
+msgstr "NEXI Tx"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_form
+msgid "NEXI Payments"
+msgstr "NEXI-maksut"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_search
+msgid "With NEXI Payments"
+msgstr "NEXI-maksuilla"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_pos_order_search
+msgid "Without NEXI Payments"
+msgstr "Ilman NEXI-maksuja"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Terminals"
+msgstr "Päätteet"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Transactions"
+msgstr "Tapahtumat"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Reports"
+msgstr "Raportit"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.nexi_menu
+msgid "Settings"
+msgstr "Asetukset"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "NEXI Payment"
+msgstr "NEXI-maksu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "Amount to pay:"
+msgstr "Maksettava summa:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "Select Terminal"
+msgstr "Valitse pääte"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "No terminal available. Please verify that terminals are powered on and connected."
+msgstr "Ei päätettä saatavilla. Varmista, että päätteet ovat päällä ja yhdistettynä."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "Default"
+msgstr "Oletus"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "After starting the payment, the customer must complete the operation on the physical POS terminal."
+msgstr "Maksun aloittamisen jälkeen asiakkaan on suoritettava toiminto fyysisellä kassapäätteellä."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "Cancel"
+msgstr "Peruuta"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentDialog
+msgid "Start Payment"
+msgstr "Aloita maksu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiWaitingScreen
+msgid "Complete payment on terminal"
+msgstr "Suorita maksu päätteellä"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiWaitingScreen
+msgid "Amount:"
+msgstr "Summa:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiWaitingScreen
+msgid "elapsed"
+msgstr "kulunut"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiWaitingScreen
+msgid "Cancel Payment"
+msgstr "Peruuta maksu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiWaitingScreen
+msgid "The customer must insert the card and follow the instructions on the POS terminal."
+msgstr "Asiakkaan on syötettävä kortti ja noudatettava kassapäätteen ohjeita."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Payment Completed!"
+msgstr "Maksu suoritettu!"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "The payment has been processed successfully."
+msgstr "Maksu on käsitelty onnistuneesti."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Card scheme:"
+msgstr "Korttijärjestelmä:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Card:"
+msgstr "Kortti:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Reference:"
+msgstr "Viite:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Authorization Code:"
+msgstr "Valtuutuskoodi:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Entry mode:"
+msgstr "Syöttötapa:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Date:"
+msgstr "Päivämäärä:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Continue"
+msgstr "Jatka"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Print Receipt"
+msgstr "Tulosta kuitti"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Payment Failed"
+msgstr "Maksu epäonnistui"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Technical detail:"
+msgstr "Tekninen yksityiskohta:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Troubleshooting:"
+msgstr "Vianmääritys:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Verify that the terminal is powered on and connected"
+msgstr "Varmista, että pääte on päällä ja yhdistettynä"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Verify that the card is valid"
+msgstr "Varmista, että kortti on voimassa"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Retry the payment"
+msgstr "Yritä maksua uudelleen"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Use another payment method if the problem persists"
+msgstr "Käytä toista maksutapaa, jos ongelma jatkuu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Back to Payment"
+msgstr "Takaisin maksuun"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Retry"
+msgstr "Yritä uudelleen"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatus
+msgid "Terminal Status"
+msgstr "Päätteen tila"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiLastTransaction
+msgid "Last NEXI Transaction"
+msgstr "Viimeisin NEXI-tapahtuma"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "NEXI Terminal Status"
+msgstr "NEXI-päätteen tila"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Total"
+msgstr "Yhteensä"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Terminal"
+msgstr "Pääte"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Status"
+msgstr "Tila"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Actions"
+msgstr "Toiminnot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Test"
+msgstr "Testaa"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiTerminalStatusPopup
+msgid "Close"
+msgstr "Sulje"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiReceiptInfo
+msgid "NEXI Payment"
+msgstr "NEXI-maksu"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiReceiptInfo
+msgid "PAN:"
+msgstr "PAN:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiReceiptInfo
+msgid "Auth:"
+msgstr "Valt:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiReceiptInfo
+msgid "Entry:"
+msgstr "Syöttö:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiReceiptInfo
+msgid "Ref:"
+msgstr "Viite:"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.NexiPaymentResult
+msgid "Amount:"
+msgstr "Summa:"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__transaction_type
+msgid "Transaction Type"
+msgstr "Tapahtumatyyppi"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__transaction_type__purchase
+msgid "Purchase"
+msgstr "Osto"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields.selection,name:pos_nexi_payment.selection__nexi_transaction__transaction_type__refund
+msgid "Refund"
+msgstr "Hyvitys"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__original_transaction_id
+msgid "Original Transaction"
+msgstr "Alkuperäinen tapahtuma"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,help:pos_nexi_payment.field_nexi_transaction__original_transaction_id
+msgid "The original purchase transaction this refund is for"
+msgstr "Alkuperäinen ostotapahtuma johon tämä hyvitys liittyy"
+
+#. module: pos_nexi_payment
+#: model:ir.model.fields,field_description:pos_nexi_payment.field_nexi_transaction__refund_ids
+msgid "Refunds"
+msgstr "Hyvitykset"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only confirmed transactions can be refunded"
+msgstr "Vain vahvistetut tapahtumat voidaan hyvittää"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only successful transactions can be refunded"
+msgstr "Vain onnistuneet tapahtumat voidaan hyvittää"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Only purchase transactions can be refunded"
+msgstr "Vain ostotapahtumat voidaan hyvittää"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Cannot initiate refund: transaction is in \"%s\" state"
+msgstr "Hyvitystä ei voi aloittaa: tapahtuma on tilassa \"%s\""
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "action_purchase_refund() is only for refund transactions"
+msgstr "action_purchase_refund() on vain hyvitystapahtumille"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_transaction.py:0
+#, python-format
+msgid "Failed to initiate refund: %s"
+msgstr "Hyvityksen aloittaminen epäonnistui: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Failed to get unconfirmed transactions: %s"
+msgstr "Vahvistamattomien tapahtumien hakeminen epäonnistui: %s"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Unconfirmed Recovery"
+msgstr "Vahvistamattomien palautus"
+
+#. module: pos_nexi_payment
+#: code:addons/pos_nexi_payment/models/nexi_terminal.py:0
+#, python-format
+msgid "Found %(total)s unconfirmed transactions: %(recovered)s recovered, %(updated)s updated."
+msgstr "Löydettiin %(total)s vahvistamatonta tapahtumaa: %(recovered)s palautettu, %(updated)s päivitetty."
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Refund"
+msgstr "Hyvitys"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Purchases"
+msgstr "Ostot"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_search
+msgid "Refunds"
+msgstr "Hyvitykset"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_transaction_form
+msgid "Refunds"
+msgstr "Hyvitykset"
+
+#. module: pos_nexi_payment
+#: model_terms:ir.ui.view,arch_db:pos_nexi_payment.view_nexi_terminal_form
+msgid "Recover Unconfirmed"
+msgstr "Palauta vahvistamattomat"
+
+#. module: pos_nexi_payment
+#: model:ir.cron,name:pos_nexi_payment.cron_recover_unconfirmed
+msgid "NEXI: Recover Unconfirmed Transactions"
+msgstr "NEXI: Palauta vahvistamattomat tapahtumat"

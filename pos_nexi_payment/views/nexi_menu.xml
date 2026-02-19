@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- NEXI Configuration Menu Item -->
+    <menuitem id="menu_nexi_configuration"
+              name="NEXI"
+              parent="point_of_sale.menu_point_config_product"
+              sequence="50"
+              groups="pos_nexi_payment.group_nexi_user"/>
+
+    <!-- NEXI Terminals Menu Item -->
+    <menuitem id="menu_nexi_terminal"
+              name="Terminals"
+              parent="menu_nexi_configuration"
+              action="action_nexi_terminal"
+              sequence="10"
+              groups="pos_nexi_payment.group_nexi_user"/>
+
+    <!-- NEXI Transactions Menu Item -->
+    <menuitem id="menu_nexi_transaction"
+              name="Transactions"
+              parent="menu_nexi_configuration"
+              action="action_nexi_transaction"
+              sequence="20"
+              groups="pos_nexi_payment.group_nexi_user"/>
+
+
+</odoo>

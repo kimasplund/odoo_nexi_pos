@@ -1,0 +1,41 @@
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+      - "8072:8072"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=myodoo
+      - PORT=5432
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./pos_nexi_payment:/mnt/extra-addons/pos_nexi_payment:ro
+      - ./pos_nexi_light:/mnt/extra-addons/pos_nexi_light:ro
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
+    command: odoo -c /etc/odoo/odoo.conf --dev=all
+    networks:
+      - odoo-network
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=myodoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - odoo-network
+
+volumes:
+  odoo-web-data:
+  odoo-db-data:
+
+networks:
+  odoo-network:
+    driver: bridge

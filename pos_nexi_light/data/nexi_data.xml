@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Default NEXI payment method configuration can be added here -->
+        <!-- This will be loaded when the module is installed -->
+    </data>
+</odoo>

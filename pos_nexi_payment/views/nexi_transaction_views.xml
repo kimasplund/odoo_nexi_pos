@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- NEXI Transaction Tree View -->
+    <record id="view_nexi_transaction_tree" model="ir.ui.view">
+        <field name="name">nexi.transaction.tree</field>
+        <field name="model">nexi.transaction</field>
+        <field name="arch" type="xml">
+            <list string="NEXI Transactions" decoration-success="state == 'confirmed'" decoration-danger="state == 'failed'" decoration-warning="state == 'pending'" decoration-info="state == 'processing'">
+                <field name="transaction_type" optional="show"/>
+                <field name="external_id"/>
+                <field name="terminal_id"/>
+                <field name="pos_order_id"/>
+                <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="state" widget="badge" decoration-success="state == 'confirmed'" decoration-danger="state == 'failed'" decoration-warning="state == 'pending'" decoration-info="state == 'processing'"/>
+                <field name="result_code" optional="show"/>
+                <field name="card_scheme" optional="hide"/>
+                <field name="authorization_code" optional="hide"/>
+                <field name="create_date" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- NEXI Transaction Form View -->
+    <record id="view_nexi_transaction_form" model="ir.ui.view">
+        <field name="name">nexi.transaction.form</field>
+        <field name="model">nexi.transaction</field>
+        <field name="arch" type="xml">
+            <form string="NEXI Transaction">
+                <header>
+                    <button name="action_retry" string="Retry" type="object" class="btn-primary" icon="fa-refresh" invisible="state not in ('failed', 'cancelled')" groups="pos_nexi_payment.group_nexi_manager"/>
+                    <button name="action_refund" string="Refund" type="object" class="btn-warning" icon="fa-undo" invisible="state != 'confirmed' or result_code != 'SUCCESS' or transaction_type != 'purchase'" groups="pos_nexi_payment.group_nexi_manager"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn-warning" icon="fa-ban" invisible="state in ('confirmed', 'failed', 'cancelled')" groups="pos_nexi_payment.group_nexi_manager"/>
+                    <button name="action_poll_status" string="Poll Status" type="object" class="btn-secondary" icon="fa-refresh" invisible="state not in ('pending', 'processing')" groups="pos_nexi_payment.group_nexi_user"/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,processing,awaiting_confirm,confirmed,failed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="external_id" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Transaction Details">
+                            <field name="transaction_type"/>
+                            <field name="terminal_id"/>
+                            <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="currency_id" options="{'no_create': True}"/>
+                            <field name="payment_method_id"/>
+                            <field name="original_transaction_id" invisible="transaction_type != 'refund'"/>
+                        </group>
+                        <group string="Status Information">
+                            <field name="state" readonly="1"/>
+                            <field name="result_code"/>
+                            <field name="result_message"/>
+                            <field name="confirm_attempts"/>
+                            <field name="create_date" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="POS Order" name="pos_order">
+                            <group>
+                                <field name="pos_order_id"/>
+                                <field name="terminal_ref"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                        </page>
+                        <page string="Refunds" name="refunds" invisible="transaction_type != 'purchase'">
+                            <field name="refund_ids">
+                                <list string="Refunds" decoration-success="state == 'confirmed'" decoration-danger="state == 'failed'">
+                                    <field name="external_id"/>
+                                    <field name="amount" widget="monetary"/>
+                                    <field name="state" widget="badge"/>
+                                    <field name="result_code"/>
+                                    <field name="create_date"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Card Details" name="card_details">
+                            <group>
+                                <group string="Card Information">
+                                    <field name="card_scheme"/>
+                                    <field name="card_number_customer"/>
+                                    <field name="card_number_merchant"/>
+                                    <field name="card_entry_mode"/>
+                                    <field name="cardholder_verification"/>
+                                    <field name="application_name"/>
+                                    <field name="application_identifier"/>
+                                </group>
+                                <group string="Authorization">
+                                    <field name="reference"/>
+                                    <field name="authorization_code"/>
+                                    <field name="authorization_response_code"/>
+                                    <field name="acquirer_reference"/>
+                                    <field name="acquirer_terminal_id"/>
+                                    <field name="acquirer_timestamp"/>
+                                    <field name="authorized_amount"/>
+                                    <field name="captured_amount"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Receipt Text" name="receipt_text">
+                            <group>
+                                <field name="receipt_details_customer" readonly="1"/>
+                                <field name="receipt_details_merchant" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Technical" name="technical" groups="pos_nexi_payment.group_nexi_manager">
+                            <group>
+                                <field name="purchase_request_time" readonly="1"/>
+                                <field name="confirm_request_time" readonly="1"/>
+                                <field name="notification_received" readonly="1"/>
+                                <field name="error_count" readonly="1"/>
+                                <field name="last_error" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- NEXI Transaction Search View -->
+    <record id="view_nexi_transaction_search" model="ir.ui.view">
+        <field name="name">nexi.transaction.search</field>
+        <field name="model">nexi.transaction</field>
+        <field name="arch" type="xml">
+            <search string="NEXI Transactions">
+                <field name="external_id"/>
+                <field name="terminal_id"/>
+                <field name="pos_order_id"/>
+                <field name="card_scheme"/>
+                <filter string="Pending" name="pending" domain="[('state', '=', 'pending')]"/>
+                <filter string="Processing" name="processing" domain="[('state', '=', 'processing')]"/>
+                <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter string="Failed" name="failed" domain="[('state', '=', 'failed')]"/>
+                <separator/>
+                <filter string="Purchases" name="purchases" domain="[('transaction_type', '=', 'purchase')]"/>
+                <filter string="Refunds" name="refunds" domain="[('transaction_type', '=', 'refund')]"/>
+                <separator/>
+                <filter string="Today" name="today" domain="[('create_date', '>=', context_today().strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" name="state" context="{'group_by': 'state'}"/>
+                    <filter string="Terminal" name="terminal" context="{'group_by': 'terminal_id'}"/>
+                    <filter string="Card Scheme" name="card_scheme" context="{'group_by': 'card_scheme'}"/>
+                    <filter string="Date" name="date" context="{'group_by': 'create_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- NEXI Transaction Action -->
+    <record id="action_nexi_transaction" model="ir.actions.act_window">
+        <field name="name">NEXI Transactions</field>
+        <field name="res_model">nexi.transaction</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_nexi_transaction_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No NEXI Transactions yet
+            </p>
+            <p>
+                Transactions will appear here when payments are processed through NEXI terminals.
+            </p>
+        </field>
+    </record>
+</odoo>
